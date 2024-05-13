@@ -1,0 +1,1242 @@
+[
+	{
+		"id": 1,
+		"name": "United Arab Emirates dirham",
+		"iso_code": "AED",
+		"fractional_unit": "Fils",
+		"number_to_basic": "100",
+		"symbol": "Dh or Dhs (pl.)"
+	},
+	{
+		"id": 2,
+		"name": "Afghan afghani",
+		"iso_code": "AFN",
+		"fractional_unit": "Pul",
+		"number_to_basic": "100",
+		"symbol": "؋‎"
+	},
+	{
+		"id": 3,
+		"name": "Albanian lek",
+		"iso_code": "ALL",
+		"fractional_unit": "Qintar",
+		"number_to_basic": "100",
+		"symbol": "Lek"
+	},
+	{
+		"id": 4,
+		"name": "Armenian dram",
+		"iso_code": "AMD",
+		"fractional_unit": "Luma",
+		"number_to_basic": "100",
+		"symbol": "֏"
+	},
+	{
+		"id": 5,
+		"name": "Netherlands Antillean guilder",
+		"iso_code": "ANG",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "ƒ"
+	},
+	{
+		"id": 6,
+		"name": "Angolan kwanza",
+		"iso_code": "AOA",
+		"fractional_unit": "Cêntimo",
+		"number_to_basic": "100",
+		"symbol": "Kz"
+	},
+	{
+		"id": 7,
+		"name": "Argentine peso",
+		"iso_code": "ARS",
+		"fractional_unit": "Centavo",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 8,
+		"name": "Australian dollar",
+		"iso_code": "AUD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 9,
+		"name": "Aruban florin",
+		"iso_code": "AWG",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "ƒ"
+	},
+	{
+		"id": 10,
+		"name": "Azerbaijani manat",
+		"iso_code": "AZN",
+		"fractional_unit": "Qəpik",
+		"number_to_basic": "100",
+		"symbol": "₼"
+	},
+	{
+		"id": 11,
+		"name": "Bosnia and Herzegovina convertible mark",
+		"iso_code": "BAM",
+		"fractional_unit": "Fening",
+		"number_to_basic": "100",
+		"symbol": "KM"
+	},
+	{
+		"id": 12,
+		"name": "Barbadian dollar",
+		"iso_code": "BBD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 13,
+		"name": "Bangladeshi taka",
+		"iso_code": "BDT",
+		"fractional_unit": "Poisha",
+		"number_to_basic": "100",
+		"symbol": "৳"
+	},
+	{
+		"id": 14,
+		"name": "Bulgarian lev",
+		"iso_code": "BGN",
+		"fractional_unit": "Stotinka",
+		"number_to_basic": "100",
+		"symbol": "Lev"
+	},
+	{
+		"id": 15,
+		"name": "Bahraini dinar",
+		"iso_code": "BHD",
+		"fractional_unit": "Fils",
+		"number_to_basic": "1000",
+		"symbol": "BD"
+	},
+	{
+		"id": 16,
+		"name": "Burundian franc",
+		"iso_code": "BIF",
+		"fractional_unit": "Centime",
+		"number_to_basic": "100",
+		"symbol": "Fr"
+	},
+	{
+		"id": 17,
+		"name": "Bermudian dollar",
+		"iso_code": "BMD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 18,
+		"name": "Brunei dollar",
+		"iso_code": "BND",
+		"fractional_unit": "Sen",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 19,
+		"name": "Bolivian boliviano",
+		"iso_code": "BOB",
+		"fractional_unit": "Centavo",
+		"number_to_basic": "100",
+		"symbol": "Bs"
+	},
+	{
+		"id": 20,
+		"name": "Brazilian real",
+		"iso_code": "BRL",
+		"fractional_unit": "Centavo",
+		"number_to_basic": "100",
+		"symbol": "R$"
+	},
+	{
+		"id": 21,
+		"name": "Bahamian dollar",
+		"iso_code": "BSD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 22,
+		"name": "Bitcoin",
+		"iso_code": "BTC",
+		"fractional_unit": "Satoshi",
+		"number_to_basic": "100000000",
+		"symbol": "₿"
+	},
+	{
+		"id": 23,
+		"name": "Bhutanese ngultrum",
+		"iso_code": "BTN",
+		"fractional_unit": "Chetrum",
+		"number_to_basic": "100",
+		"symbol": "Nu"
+	},
+	{
+		"id": 24,
+		"name": "Botswana pula",
+		"iso_code": "BWP",
+		"fractional_unit": "Thebe",
+		"number_to_basic": "100",
+		"symbol": "P"
+	},
+	{
+		"id": 25,
+		"name": "Belarusian ruble",
+		"iso_code": "BYN",
+		"fractional_unit": "Copeck",
+		"number_to_basic": "100",
+		"symbol": "Br"
+	},
+	{
+		"id": 26,
+		"name": "Belize dollar",
+		"iso_code": "BZD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 27,
+		"name": "Canadian dollar",
+		"iso_code": "CAD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 28,
+		"name": "Congolese franc",
+		"iso_code": "CDF",
+		"fractional_unit": "Centime",
+		"number_to_basic": "100",
+		"symbol": "Fr"
+	},
+	{
+		"id": 29,
+		"name": "Swiss franc",
+		"iso_code": "CHF",
+		"fractional_unit": "Rappen",
+		"number_to_basic": "100",
+		"symbol": "Fr"
+	},
+	{
+		"id": 30,
+		"name": "Chilean peso",
+		"iso_code": "CLP",
+		"fractional_unit": "Centavo",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 31,
+		"name": "Renminbi",
+		"iso_code": "CNY",
+		"fractional_unit": "Jiao",
+		"number_to_basic": "10",
+		"symbol": "¥"
+	},
+	{
+		"id": 32,
+		"name": "Colombian peso",
+		"iso_code": "COP",
+		"fractional_unit": "Centavo",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 33,
+		"name": "Costa Rican colón",
+		"iso_code": "CRC",
+		"fractional_unit": "Céntimo",
+		"number_to_basic": "100",
+		"symbol": "₡"
+	},
+	{
+		"id": 34,
+		"name": "Cuban peso",
+		"iso_code": "CUP",
+		"fractional_unit": "Centavo",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 35,
+		"name": "Cape Verdean escudo",
+		"iso_code": "CVE",
+		"fractional_unit": "Centavo",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 36,
+		"name": "Czech koruna",
+		"iso_code": "CZK",
+		"fractional_unit": "Heller",
+		"number_to_basic": "100",
+		"symbol": "Kč"
+	},
+	{
+		"id": 37,
+		"name": "Djiboutian franc",
+		"iso_code": "DJF",
+		"fractional_unit": "Centime",
+		"number_to_basic": "100",
+		"symbol": "Fr"
+	},
+	{
+		"id": 38,
+		"name": "Danish krone",
+		"iso_code": "DKK",
+		"fractional_unit": "Øre",
+		"number_to_basic": "100",
+		"symbol": "kr"
+	},
+	{
+		"id": 39,
+		"name": "Dominican peso",
+		"iso_code": "DOP",
+		"fractional_unit": "Centavo",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 40,
+		"name": "Algerian dinar",
+		"iso_code": "DZD",
+		"fractional_unit": "Centime",
+		"number_to_basic": "100",
+		"symbol": "DA"
+	},
+	{
+		"id": 41,
+		"name": "Egyptian pound",
+		"iso_code": "EGP",
+		"fractional_unit": "Piastre",
+		"number_to_basic": "100",
+		"symbol": "LE"
+	},
+	{
+		"id": 42,
+		"name": "Eritrean nakfa",
+		"iso_code": "ERN",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "Nkf"
+	},
+	{
+		"id": 43,
+		"name": "Ethiopian birr",
+		"iso_code": "ETB",
+		"fractional_unit": "Santim",
+		"number_to_basic": "100",
+		"symbol": "Br"
+	},
+	{
+		"id": 44,
+		"name": "Euro",
+		"iso_code": "EUR",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "€"
+	},
+	{
+		"id": 45,
+		"name": "Fijian dollar",
+		"iso_code": "FJD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 46,
+		"name": "Falkland Islands pound",
+		"iso_code": "FKP",
+		"fractional_unit": "Penny",
+		"number_to_basic": "100",
+		"symbol": "£"
+	},
+	{
+		"id": 47,
+		"name": "Sterling",
+		"iso_code": "GBP",
+		"fractional_unit": "Penny",
+		"number_to_basic": "100",
+		"symbol": "£"
+	},
+	{
+		"id": 48,
+		"name": "Georgian lari",
+		"iso_code": "GEL",
+		"fractional_unit": "Tetri",
+		"number_to_basic": "100",
+		"symbol": "₾"
+	},
+	{
+		"id": 49,
+		"name": "Ghanaian cedi",
+		"iso_code": "GHS",
+		"fractional_unit": "Pesewa",
+		"number_to_basic": "100",
+		"symbol": "₵"
+	},
+	{
+		"id": 50,
+		"name": "Gibraltar pound",
+		"iso_code": "GIP",
+		"fractional_unit": "Penny",
+		"number_to_basic": "100",
+		"symbol": "£"
+	},
+	{
+		"id": 51,
+		"name": "Gambian dalasi",
+		"iso_code": "GMD",
+		"fractional_unit": "Butut",
+		"number_to_basic": "100",
+		"symbol": "D"
+	},
+	{
+		"id": 52,
+		"name": "Guinean franc",
+		"iso_code": "GNF",
+		"fractional_unit": "Centime",
+		"number_to_basic": "100",
+		"symbol": "Fr"
+	},
+	{
+		"id": 53,
+		"name": "Guatemalan quetzal",
+		"iso_code": "GTQ",
+		"fractional_unit": "Centavo",
+		"number_to_basic": "100",
+		"symbol": "Q"
+	},
+	{
+		"id": 54,
+		"name": "Guyanese dollar",
+		"iso_code": "GYD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 55,
+		"name": "Hong Kong dollar",
+		"iso_code": "HKD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 56,
+		"name": "Honduran lempira",
+		"iso_code": "HNL",
+		"fractional_unit": "Centavo",
+		"number_to_basic": "100",
+		"symbol": "L"
+	},
+	{
+		"id": 57,
+		"name": "Haitian gourde",
+		"iso_code": "HTG",
+		"fractional_unit": "Centime",
+		"number_to_basic": "100",
+		"symbol": "G"
+	},
+	{
+		"id": 58,
+		"name": "Hungarian forint",
+		"iso_code": "HUF",
+		"fractional_unit": "Fillér",
+		"number_to_basic": "100",
+		"symbol": "Ft"
+	},
+	{
+		"id": 59,
+		"name": "Indonesian rupiah",
+		"iso_code": "IDR",
+		"fractional_unit": "Sen",
+		"number_to_basic": "100",
+		"symbol": "Rp"
+	},
+	{
+		"id": 60,
+		"name": "Israeli new shekel",
+		"iso_code": "ILS",
+		"fractional_unit": "Agora",
+		"number_to_basic": "100",
+		"symbol": "₪"
+	},
+	{
+		"id": 61,
+		"name": "Indian rupee",
+		"iso_code": "INR",
+		"fractional_unit": "Paisa",
+		"number_to_basic": "100",
+		"symbol": "₹"
+	},
+	{
+		"id": 62,
+		"name": "Iraqi dinar",
+		"iso_code": "IQD",
+		"fractional_unit": "Fils",
+		"number_to_basic": "1000",
+		"symbol": "ID"
+	},
+	{
+		"id": 63,
+		"name": "Iranian rial",
+		"iso_code": "IRR",
+		"fractional_unit": "Rial",
+		"number_to_basic": "1",
+		"symbol": "Rl or Rls (pl.)"
+	},
+	{
+		"id": 64,
+		"name": "Icelandic króna",
+		"iso_code": "ISK",
+		"fractional_unit": "Eyrir",
+		"number_to_basic": "100",
+		"symbol": "kr"
+	},
+	{
+		"id": 65,
+		"name": "Jamaican dollar",
+		"iso_code": "JMD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 66,
+		"name": "Jordanian dinar",
+		"iso_code": "JOD",
+		"fractional_unit": "Piastre",
+		"number_to_basic": "100",
+		"symbol": "JD"
+	},
+	{
+		"id": 67,
+		"name": "Japanese yen",
+		"iso_code": "JPY",
+		"fractional_unit": "Sen",
+		"number_to_basic": "100",
+		"symbol": "¥"
+	},
+	{
+		"id": 68,
+		"name": "Kenyan shilling",
+		"iso_code": "KES",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "Sh or Shs (pl.)"
+	},
+	{
+		"id": 69,
+		"name": "Kyrgyz som",
+		"iso_code": "KGS",
+		"fractional_unit": "Tyiyn",
+		"number_to_basic": "100",
+		"symbol": "som"
+	},
+	{
+		"id": 70,
+		"name": "Cambodian riel",
+		"iso_code": "KHR",
+		"fractional_unit": "Sen",
+		"number_to_basic": "100",
+		"symbol": "៛"
+	},
+	{
+		"id": 71,
+		"name": "Comorian franc",
+		"iso_code": "KMF",
+		"fractional_unit": "Centime",
+		"number_to_basic": "100",
+		"symbol": "Fr"
+	},
+	{
+		"id": 72,
+		"name": "North Korean won",
+		"iso_code": "KPW",
+		"fractional_unit": "Chon",
+		"number_to_basic": "100",
+		"symbol": "₩"
+	},
+	{
+		"id": 73,
+		"name": "South Korean won",
+		"iso_code": "KRW",
+		"fractional_unit": "Jeon",
+		"number_to_basic": "100",
+		"symbol": "₩"
+	},
+	{
+		"id": 74,
+		"name": "Kuwaiti dinar",
+		"iso_code": "KWD",
+		"fractional_unit": "Fils",
+		"number_to_basic": "1000",
+		"symbol": "KD"
+	},
+	{
+		"id": 75,
+		"name": "Cayman Islands dollar",
+		"iso_code": "KYD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 76,
+		"name": "Kazakhstani tenge",
+		"iso_code": "KZT",
+		"fractional_unit": "Tıyn",
+		"number_to_basic": "100",
+		"symbol": "₸"
+	},
+	{
+		"id": 77,
+		"name": "Lao kip",
+		"iso_code": "LAK",
+		"fractional_unit": "Att",
+		"number_to_basic": "100",
+		"symbol": "₭"
+	},
+	{
+		"id": 78,
+		"name": "Lebanese pound",
+		"iso_code": "LBP",
+		"fractional_unit": "Piastre",
+		"number_to_basic": "100",
+		"symbol": "LL"
+	},
+	{
+		"id": 79,
+		"name": "Sri Lankan rupee",
+		"iso_code": "LKR",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "Re or Rs (pl.)"
+	},
+	{
+		"id": 80,
+		"name": "Liberian dollar",
+		"iso_code": "LRD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 81,
+		"name": "Lesotho loti",
+		"iso_code": "LSL",
+		"fractional_unit": "Sente",
+		"number_to_basic": "100",
+		"symbol": "L or M (pl.)"
+	},
+	{
+		"id": 82,
+		"name": "Libyan dinar",
+		"iso_code": "LYD",
+		"fractional_unit": "Dirham",
+		"number_to_basic": "1000",
+		"symbol": "LD"
+	},
+	{
+		"id": 83,
+		"name": "Moroccan dirham",
+		"iso_code": "MAD",
+		"fractional_unit": "Centime",
+		"number_to_basic": "100",
+		"symbol": "DH"
+	},
+	{
+		"id": 84,
+		"name": "Moldovan leu",
+		"iso_code": "MDL",
+		"fractional_unit": "Ban",
+		"number_to_basic": "100",
+		"symbol": "Leu or Lei (pl.)"
+	},
+	{
+		"id": 85,
+		"name": "Malagasy ariary",
+		"iso_code": "MGA",
+		"fractional_unit": "Iraimbilanja",
+		"number_to_basic": "5",
+		"symbol": "Ar"
+	},
+	{
+		"id": 86,
+		"name": "Macedonian denar",
+		"iso_code": "MKD",
+		"fractional_unit": "Deni",
+		"number_to_basic": "100",
+		"symbol": "DEN"
+	},
+	{
+		"id": 87,
+		"name": "Burmese kyat",
+		"iso_code": "MMK",
+		"fractional_unit": "Pya",
+		"number_to_basic": "100",
+		"symbol": "K or Ks (pl.)"
+	},
+	{
+		"id": 88,
+		"name": "Mongolian tögrög",
+		"iso_code": "MNT",
+		"fractional_unit": "Möngö",
+		"number_to_basic": "100",
+		"symbol": "₮"
+	},
+	{
+		"id": 89,
+		"name": "Macanese pataca",
+		"iso_code": "MOP",
+		"fractional_unit": "Avo",
+		"number_to_basic": "100",
+		"symbol": "MOP$"
+	},
+	{
+		"id": 90,
+		"name": "Mauritanian ouguiya",
+		"iso_code": "MRU",
+		"fractional_unit": "Khoums",
+		"number_to_basic": "5",
+		"symbol": "UM"
+	},
+	{
+		"id": 91,
+		"name": "Mauritian rupee",
+		"iso_code": "MUR",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "Re or Rs (pl.)"
+	},
+	{
+		"id": 92,
+		"name": "Maldivian rufiyaa",
+		"iso_code": "MVR",
+		"fractional_unit": "Laari",
+		"number_to_basic": "100",
+		"symbol": "Rf"
+	},
+	{
+		"id": 93,
+		"name": "Malawian kwacha",
+		"iso_code": "MWK",
+		"fractional_unit": "Tambala",
+		"number_to_basic": "100",
+		"symbol": "K"
+	},
+	{
+		"id": 94,
+		"name": "Mexican peso",
+		"iso_code": "MXN",
+		"fractional_unit": "Centavo",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 95,
+		"name": "Malaysian ringgit",
+		"iso_code": "MYR",
+		"fractional_unit": "Sen",
+		"number_to_basic": "100",
+		"symbol": "RM"
+	},
+	{
+		"id": 96,
+		"name": "Mozambican metical",
+		"iso_code": "MZN",
+		"fractional_unit": "Centavo",
+		"number_to_basic": "100",
+		"symbol": "Mt"
+	},
+	{
+		"id": 97,
+		"name": "Namibian dollar",
+		"iso_code": "NAD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 98,
+		"name": "Nigerian naira",
+		"iso_code": "NGN",
+		"fractional_unit": "Kobo",
+		"number_to_basic": "100",
+		"symbol": "₦"
+	},
+	{
+		"id": 99,
+		"name": "Nicaraguan córdoba",
+		"iso_code": "NIO",
+		"fractional_unit": "Centavo",
+		"number_to_basic": "100",
+		"symbol": "C$"
+	},
+	{
+		"id": 100,
+		"name": "Norwegian krone",
+		"iso_code": "NOK",
+		"fractional_unit": "Øre",
+		"number_to_basic": "100",
+		"symbol": "kr"
+	},
+	{
+		"id": 101,
+		"name": "Nepalese rupee",
+		"iso_code": "NPR",
+		"fractional_unit": "Paisa",
+		"number_to_basic": "100",
+		"symbol": "Re or Rs (pl.)"
+	},
+	{
+		"id": 102,
+		"name": "New Zealand dollar",
+		"iso_code": "NZD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 103,
+		"name": "Omani rial",
+		"iso_code": "OMR",
+		"fractional_unit": "Baisa",
+		"number_to_basic": "1000",
+		"symbol": "RO"
+	},
+	{
+		"id": 104,
+		"name": "Panamanian balboa",
+		"iso_code": "PAB",
+		"fractional_unit": "Centésimo",
+		"number_to_basic": "100",
+		"symbol": "B/"
+	},
+	{
+		"id": 105,
+		"name": "Peruvian sol",
+		"iso_code": "PEN",
+		"fractional_unit": "Céntimo",
+		"number_to_basic": "100",
+		"symbol": "S/"
+	},
+	{
+		"id": 106,
+		"name": "Papua New Guinean kina",
+		"iso_code": "PGK",
+		"fractional_unit": "Toea",
+		"number_to_basic": "100",
+		"symbol": "K"
+	},
+	{
+		"id": 107,
+		"name": "Philippine peso",
+		"iso_code": "PHP",
+		"fractional_unit": "Sentimo",
+		"number_to_basic": "100",
+		"symbol": "₱"
+	},
+	{
+		"id": 108,
+		"name": "Pakistani rupee",
+		"iso_code": "PKR",
+		"fractional_unit": "Paisa",
+		"number_to_basic": "100",
+		"symbol": "Re or Rs (pl.)"
+	},
+	{
+		"id": 109,
+		"name": "Polish złoty",
+		"iso_code": "PLN",
+		"fractional_unit": "Grosz",
+		"number_to_basic": "100",
+		"symbol": "zł"
+	},
+	{
+		"id": 110,
+		"name": "Paraguayan guaraní",
+		"iso_code": "PYG",
+		"fractional_unit": "Céntimo",
+		"number_to_basic": "100",
+		"symbol": "₲"
+	},
+	{
+		"id": 111,
+		"name": "Qatari riyal",
+		"iso_code": "QAR",
+		"fractional_unit": "Dirham",
+		"number_to_basic": "100",
+		"symbol": "QR"
+	},
+	{
+		"id": 112,
+		"name": "Romanian leu",
+		"iso_code": "RON",
+		"fractional_unit": "Ban",
+		"number_to_basic": "100",
+		"symbol": "Leu or Lei (pl.)"
+	},
+	{
+		"id": 113,
+		"name": "Serbian dinar",
+		"iso_code": "RSD",
+		"fractional_unit": "Para",
+		"number_to_basic": "100",
+		"symbol": "DIN"
+	},
+	{
+		"id": 114,
+		"name": "Russian ruble",
+		"iso_code": "RUB",
+		"fractional_unit": "Kopeck",
+		"number_to_basic": "100",
+		"symbol": "₽"
+	},
+	{
+		"id": 115,
+		"name": "Rwandan franc",
+		"iso_code": "RWF",
+		"fractional_unit": "Centime",
+		"number_to_basic": "100",
+		"symbol": "Fr"
+	},
+	{
+		"id": 116,
+		"name": "Saudi riyal",
+		"iso_code": "SAR",
+		"fractional_unit": "Halala",
+		"number_to_basic": "100",
+		"symbol": "Rl or Rls (pl.)"
+	},
+	{
+		"id": 117,
+		"name": "Solomon Islands dollar",
+		"iso_code": "SBD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 118,
+		"name": "Seychellois rupee",
+		"iso_code": "SCR",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "Re or Rs (pl.)"
+	},
+	{
+		"id": 119,
+		"name": "Sudanese pound",
+		"iso_code": "SDG",
+		"fractional_unit": "Piastre",
+		"number_to_basic": "100",
+		"symbol": "LS"
+	},
+	{
+		"id": 120,
+		"name": "Swedish krona",
+		"iso_code": "SEK",
+		"fractional_unit": "Öre",
+		"number_to_basic": "100",
+		"symbol": "kr"
+	},
+	{
+		"id": 121,
+		"name": "Singapore dollar",
+		"iso_code": "SGD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 122,
+		"name": "Saint Helena pound",
+		"iso_code": "SHP",
+		"fractional_unit": "Penny",
+		"number_to_basic": "100",
+		"symbol": "£"
+	},
+	{
+		"id": 123,
+		"name": "Sierra Leonean leone",
+		"iso_code": "SLE",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "Le"
+	},
+	{
+		"id": 124,
+		"name": "Somali shilling",
+		"iso_code": "SOS",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "Sh or Shs (pl.)"
+	},
+	{
+		"id": 125,
+		"name": "Surinamese dollar",
+		"iso_code": "SRD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 126,
+		"name": "South Sudanese pound",
+		"iso_code": "SSP",
+		"fractional_unit": "Piaster",
+		"number_to_basic": "100",
+		"symbol": null
+	},
+	{
+		"id": 127,
+		"name": "São Tomé and Príncipe dobra",
+		"iso_code": "STN",
+		"fractional_unit": "Cêntimo",
+		"number_to_basic": "100",
+		"symbol": "Db"
+	},
+	{
+		"id": 128,
+		"name": "Syrian pound",
+		"iso_code": "SYP",
+		"fractional_unit": "Piastre",
+		"number_to_basic": "100",
+		"symbol": "LS"
+	},
+	{
+		"id": 129,
+		"name": "Swazi lilangeni",
+		"iso_code": "SZL",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "L or E (pl.)"
+	},
+	{
+		"id": 130,
+		"name": "Thai baht",
+		"iso_code": "THB",
+		"fractional_unit": "Satang",
+		"number_to_basic": "100",
+		"symbol": "฿"
+	},
+	{
+		"id": 131,
+		"name": "Tajikistani somoni",
+		"iso_code": "TJS",
+		"fractional_unit": "Diram",
+		"number_to_basic": "100",
+		"symbol": "SM"
+	},
+	{
+		"id": 132,
+		"name": "Turkmenistani manat",
+		"iso_code": "TMT",
+		"fractional_unit": "Tenge",
+		"number_to_basic": "100",
+		"symbol": "m"
+	},
+	{
+		"id": 133,
+		"name": "Tunisian dinar",
+		"iso_code": "TND",
+		"fractional_unit": "Millime",
+		"number_to_basic": "1000",
+		"symbol": "DT"
+	},
+	{
+		"id": 134,
+		"name": "Tongan paʻanga",
+		"iso_code": "TOP",
+		"fractional_unit": "Seniti",
+		"number_to_basic": "100",
+		"symbol": "T$"
+	},
+	{
+		"id": 135,
+		"name": "Turkish lira",
+		"iso_code": "TRY",
+		"fractional_unit": "Kuruş",
+		"number_to_basic": "100",
+		"symbol": "₺"
+	},
+	{
+		"id": 136,
+		"name": "Trinidad and Tobago dollar",
+		"iso_code": "TTD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 137,
+		"name": "New Taiwan dollar",
+		"iso_code": "TWD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 138,
+		"name": "Tanzanian shilling",
+		"iso_code": "TZS",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "Sh or Shs (pl.)"
+	},
+	{
+		"id": 139,
+		"name": "Ukrainian hryvnia",
+		"iso_code": "UAH",
+		"fractional_unit": "Kopeck",
+		"number_to_basic": "100",
+		"symbol": "₴"
+	},
+	{
+		"id": 140,
+		"name": "Ugandan shilling",
+		"iso_code": "UGX",
+		"fractional_unit": null,
+		"number_to_basic": null,
+		"symbol": "Sh or Shs (pl.)"
+	},
+	{
+		"id": 141,
+		"name": "United States dollar",
+		"iso_code": "USD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 142,
+		"name": "Uruguayan peso",
+		"iso_code": "UYU",
+		"fractional_unit": "Centésimo",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 143,
+		"name": "Uzbekistani sum",
+		"iso_code": "UZS",
+		"fractional_unit": "Tiyin",
+		"number_to_basic": "100",
+		"symbol": "soum"
+	},
+	{
+		"id": 144,
+		"name": "Venezuelan digital bolívar",
+		"iso_code": "VED",
+		"fractional_unit": "Céntimo",
+		"number_to_basic": "100",
+		"symbol": "Bs.D"
+	},
+	{
+		"id": 145,
+		"name": "Venezuelan sovereign bolívar",
+		"iso_code": "VES",
+		"fractional_unit": "Céntimo",
+		"number_to_basic": "1",
+		"symbol": "Bs.S"
+	},
+	{
+		"id": 146,
+		"name": "Vietnamese đồng",
+		"iso_code": "VND",
+		"fractional_unit": "Hào",
+		"number_to_basic": "10",
+		"symbol": "₫"
+	},
+	{
+		"id": 147,
+		"name": "Vanuatu vatu",
+		"iso_code": "VUV",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "VT"
+	},
+	{
+		"id": 148,
+		"name": "Samoan tālā",
+		"iso_code": "WST",
+		"fractional_unit": "Sene",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 149,
+		"name": "Central African CFA franc",
+		"iso_code": "XAF",
+		"fractional_unit": "Centime",
+		"number_to_basic": "100",
+		"symbol": "Fr"
+	},
+	{
+		"id": 150,
+		"name": "Eastern Caribbean dollar",
+		"iso_code": "XCD",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "$"
+	},
+	{
+		"id": 151,
+		"name": "West African CFA franc",
+		"iso_code": "XOF",
+		"fractional_unit": "Centime",
+		"number_to_basic": "100",
+		"symbol": "Fr"
+	},
+	{
+		"id": 152,
+		"name": "CFP franc",
+		"iso_code": "XPF",
+		"fractional_unit": "Centime",
+		"number_to_basic": "100",
+		"symbol": "Fr"
+	},
+	{
+		"id": 153,
+		"name": "Yemeni rial",
+		"iso_code": "YER",
+		"fractional_unit": "Fils",
+		"number_to_basic": "100",
+		"symbol": "Rl or Rls (pl.)"
+	},
+	{
+		"id": 154,
+		"name": "South African rand",
+		"iso_code": "ZAR",
+		"fractional_unit": "Cent",
+		"number_to_basic": "100",
+		"symbol": "R"
+	},
+	{
+		"id": 155,
+		"name": "Zambian kwacha",
+		"iso_code": "ZMW",
+		"fractional_unit": "Ngwee",
+		"number_to_basic": "100",
+		"symbol": "K"
+	}
+]

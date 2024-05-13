@@ -1,0 +1,3099 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+ Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="1.0.6" use-changelog="false" last-position="0,0" last-zoom="0.3" max-obj-count="42"
+	 default-owner="postgres"
+	 layers="Default"
+	 active-layers="0"
+	 layer-name-colors="#000000"
+	 layer-rect-colors="#b4b4b4"
+	 show-layer-names="false" show-layer-rects="false">
+<database name="database" encoding="UTF8" is-template="false" allow-conns="true">
+</database>
+
+<schema name="public" layers="0" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="securities" layers="0" collapse-mode="2" max-obj-count="74" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="2080" y="1060"/>
+	<column name="id" not-null="true">
+		<type name="bigserial" length="0"/>
+	</column>
+	<column name="code" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="type" not-null="true">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[Common Stock
+Mutual Fund
+Commodity
+Futures
+INDEX
+FUND
+ETF]]> </comment>
+	</column>
+	<column name="name" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="exchange" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="currency" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="country" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="figi">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[Financial Instrument Global Identifier (FIGI), formerly Bloomberg Global Identifier (BBGID)]]> </comment>
+	</column>
+	<column name="isin">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[International Securities Identification Number]]> </comment>
+	</column>
+	<column name="lei">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[Legal Entity Identifier]]> </comment>
+	</column>
+	<column name="wkn">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[Wertpapierkennnummer (only Germany)]]> </comment>
+	</column>
+	<column name="cusip">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[Committee on Uniform Security Identification Procedures]]> </comment>
+	</column>
+	<column name="cik">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[Central Index Key (CIK) is a unique number by the United States Securities and Exchange Commission. Used to identify company related filings in online databases like Electronic Data Gathering, Analysis, and Retrieval (EDGAR).]]> </comment>
+	</column>
+	<column name="tws_con_id">
+		<type name="bigint" length="0"/>
+		<comment> <![CDATA[ConID for this security. Used to get data from Interactive Brokers Traders Workstation API.
+https://interactivebrokers.github.io/tws-api/basic_contracts.html]]> </comment>
+	</column>
+	<column name="ipo_date">
+		<type name="date" length="0"/>
+	</column>
+	<column name="is_delisted" default-value="false">
+		<type name="bool" length="0"/>
+	</column>
+	<column name="delisting_date">
+		<type name="date" length="0"/>
+		<comment> <![CDATA[Date of delisting.]]> </comment>
+	</column>
+	<column name="description">
+		<type name="text" length="0"/>
+	</column>
+	<column name="marketcap">
+		<type name="bigint" length="0"/>
+		<comment> <![CDATA[shares_outstanding * stock_price]]> </comment>
+	</column>
+	<column name="beta">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="shares_outstanding">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="shares_float">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="shares_short">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="short_ratio">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="short_percent_outstanding">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="short_percent_float">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="has_options" default-value="false">
+		<type name="bool" length="0"/>
+	</column>
+	<column name="url">
+		<type name="text" length="0"/>
+	</column>
+	<column name="gics_code">
+		<type name="bigint" length="0"/>
+		<comment> <![CDATA[GICS Code]]> </comment>
+	</column>
+	<column name="sector">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[Not GIC standard sector name.]]> </comment>
+	</column>
+	<column name="industry">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[Not GIC standard industry name.]]> </comment>
+	</column>
+	<column name="logo_url">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[Link to the logo image.]]> </comment>
+	</column>
+	<column name="logo_base64">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[BASE64 encoded logo.]]> </comment>
+	</column>
+	<column name="ebitda">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="pe_ratio">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="peg_ratio">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="wallstreet_target_price">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="book_value">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="dividend_share">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="dividend_yield">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="earnings_share">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="eps_estimate_current_year">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="eps_estimate_next_year">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="eps_estimate_next_quarter">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="eps_estimate_current_quarter">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="most_recent_quarter">
+		<type name="date" length="0"/>
+	</column>
+	<column name="profit_margin">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="operating_margin_ttm">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="return_on_assets_ttm">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="return_on_equity_ttm">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="revenue_ttm">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="revenue_per_share_ttm">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="quarterly_revenue_growth_yoy">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="gross_profit_ttm">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="diluted_eps_ttm">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="quarterly_earnings_growth_yoy">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="forward_pe">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="price_sales_ttm">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="price_book_mrq">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="enterprise_value">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="enterprise_value_revenue">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="enterprise_value_ebitda">
+		<type name="numeric" length="0"/>
+	</column>
+	<constraint name="security_id_pk" type="pk-constr" table="public.securities">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="securities_code_exchange_uq" type="uq-constr" table="public.securities">
+		<columns names="code,exchange" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="quotes" layers="0" collapse-mode="2" max-obj-count="14" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1720" y="80"/>
+	<column name="security" not-null="true">
+		<type name="bigserial" length="0"/>
+	</column>
+	<column name="date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="open">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[raw]]> </comment>
+	</column>
+	<column name="high">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[raw]]> </comment>
+	</column>
+	<column name="low">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[raw]]> </comment>
+	</column>
+	<column name="close">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[raw]]> </comment>
+	</column>
+	<column name="split_adjusted_open">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[Only split adjusted open price]]> </comment>
+	</column>
+	<column name="split_adjusted_high">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[Only split adjusted high price]]> </comment>
+	</column>
+	<column name="split_adjusted_low">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[Only split adjusted low price]]> </comment>
+	</column>
+	<column name="split_adjusted_close">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[Only split adjusted close price]]> </comment>
+	</column>
+	<column name="adjusted_close">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[Total adjusted for splits and dividends.
+Used for calculations about correlation etc.]]> </comment>
+	</column>
+	<column name="volume">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[Number of traded shares on a specific day.]]> </comment>
+	</column>
+	<constraint name="security_date_uq" type="uq-constr" table="public.quotes">
+		<columns names="security,date" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="currencies" layers="0" collapse-mode="2" pagination="true" attribs-page="0" ext-attribs-page="0" max-obj-count="6" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="320" y="1700"/>
+	<column name="id" not-null="true">
+		<type name="bigserial" length="0"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="iso_code" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="fractional_unit">
+		<type name="text" length="0"/>
+	</column>
+	<column name="number_to_basic">
+		<type name="bigint" length="0"/>
+	</column>
+	<constraint name="currency_id_pk" type="pk-constr" table="public.currencies">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="symbol_uq" type="uq-constr" table="public.currencies">
+		<columns names="iso_code" ref-type="src-columns"/>
+	</constraint>
+	<initial-data>
+<![CDATA["id";"name";"iso_code";"fractional_unit";"number_to_basic"
+"1";"United Arab Emirates dirham";"AED";"Fils";"100"
+"2";"Afghan afghani";"AFN";"Pul";"100"
+"3";"Albanian lek";"ALL";"Qintar";"100"
+"4";"Armenian dram";"AMD";"Luma";"100"
+"5";"Netherlands Antillean guilder";"ANG";"Cent";"100"
+"6";"Angolan kwanza";"AOA";"Cêntimo";"100"
+"7";"Argentine peso";"ARS";"Centavo";"100"
+"8";"Australian dollar";"AUD";"Cent";"100"
+"9";"Aruban florin";"AWG";"Cent";"100"
+"10";"Azerbaijani manat";"AZN";"Qəpik";"100"
+"11";"Bosnia and Herzegovina convertible mark";"BAM";"Fening";"100"
+"12";"Barbadian dollar";"BBD";"Cent";"100"
+"13";"Bangladeshi taka";"BDT";"Poisha";"100"
+"14";"Bulgarian lev";"BGN";"Stotinka";"100"
+"15";"Bahraini dinar";"BHD";"Fils";"1000"
+"16";"Burundian franc";"BIF";"Centime";"100"
+"17";"Bermudian dollar";"BMD";"Cent";"100"
+"18";"Brunei dollar";"BND";"Sen";"100"
+"19";"Bolivian boliviano";"BOB";"Centavo";"100"
+"20";"Brazilian real";"BRL";"Centavo";"100"
+"21";"Bahamian dollar";"BSD";"Cent";"100"
+"22";"Bitcoin";"BTC";"Satoshi";"100000000"
+"23";"Bhutanese ngultrum";"BTN";"Chetrum";"100"
+"24";"Botswana pula";"BWP";"Thebe";"100"
+"25";"Belarusian ruble";"BYN";"Copeck";"100"
+"26";"Belize dollar";"BZD";"Cent";"100"
+"27";"Canadian dollar";"CAD";"Cent";"100"
+"28";"Congolese franc";"CDF";"Centime";"100"
+"29";"Swiss franc";"CHF";"Rappen";"100"
+"30";"Chilean peso";"CLP";"Centavo";"100"
+"31";"Renminbi";"CNY";"Jiao";"10"
+"32";"Colombian peso";"COP";"Centavo";"100"
+"33";"Costa Rican colón";"CRC";"Céntimo";"100"
+"34";"Cuban peso";"CUP";"Centavo";"100"
+"35";"Cape Verdean escudo";"CVE";"Centavo";"100"
+"36";"Czech koruna";"CZK";"Heller";"100"
+"37";"Djiboutian franc";"DJF";"Centime";"100"
+"38";"Danish krone";"DKK";"Øre";"100"
+"39";"Dominican peso";"DOP";"Centavo";"100"
+"40";"Algerian dinar";"DZD";"Centime";"100"
+"41";"Egyptian pound";"EGP";"Piastre";"100"
+"42";"Eritrean nakfa";"ERN";"Cent";"100"
+"43";"Ethiopian birr";"ETB";"Santim";"100"
+"44";"Euro";"EUR";"Cent";"100"
+"45";"Fijian dollar";"FJD";"Cent";"100"
+"46";"Falkland Islands pound";"FKP";"Penny";"100"
+"47";"Sterling";"GBP";"Penny";"100"
+"48";"Georgian lari";"GEL";"Tetri";"100"
+"49";"Ghanaian cedi";"GHS";"Pesewa";"100"
+"50";"Gibraltar pound";"GIP";"Penny";"100"
+"51";"Gambian dalasi";"GMD";"Butut";"100"
+"52";"Guinean franc";"GNF";"Centime";"100"
+"53";"Guatemalan quetzal";"GTQ";"Centavo";"100"
+"54";"Guyanese dollar";"GYD";"Cent";"100"
+"55";"Hong Kong dollar";"HKD";"Cent";"100"
+"56";"Honduran lempira";"HNL";"Centavo";"100"
+"57";"Haitian gourde";"HTG";"Centime";"100"
+"58";"Hungarian forint";"HUF";"Fillér";"100"
+"59";"Indonesian rupiah";"IDR";"Sen";"100"
+"60";"Israeli new shekel";"ILS";"Agora";"100"
+"61";"Indian rupee";"INR";"Paisa";"100"
+"62";"Iraqi dinar";"IQD";"Fils";"1000"
+"63";"Iranian rial";"IRR";"Rial";"1"
+"64";"Icelandic króna";"ISK";"Eyrir";"100"
+"65";"Jamaican dollar";"JMD";"Cent";"100"
+"66";"Jordanian dinar";"JOD";"Piastre";"100"
+"67";"Japanese yen";"JPY";"Sen";"100"
+"68";"Kenyan shilling";"KES";"Cent";"100"
+"69";"Kyrgyz som";"KGS";"Tyiyn";"100"
+"70";"Cambodian riel";"KHR";"Sen";"100"
+"71";"Comorian franc";"KMF";"Centime";"100"
+"72";"North Korean won";"KPW";"Chon";"100"
+"73";"South Korean won";"KRW";"Jeon";"100"
+"74";"Kuwaiti dinar";"KWD";"Fils";"1000"
+"75";"Cayman Islands dollar";"KYD";"Cent";"100"
+"76";"Kazakhstani tenge";"KZT";"Tıyn";"100"
+"77";"Lao kip";"LAK";"Att";"100"
+"78";"Lebanese pound";"LBP";"Piastre";"100"
+"79";"Sri Lankan rupee";"LKR";"Cent";"100"
+"80";"Liberian dollar";"LRD";"Cent";"100"
+"81";"Lesotho loti";"LSL";"Sente";"100"
+"82";"Libyan dinar";"LYD";"Dirham";"1000"
+"83";"Moroccan dirham";"MAD";"Centime";"100"
+"84";"Moldovan leu";"MDL";"Ban";"100"
+"85";"Malagasy ariary";"MGA";"Iraimbilanja";"5"
+"86";"Macedonian denar";"MKD";"Deni";"100"
+"87";"Burmese kyat";"MMK";"Pya";"100"
+"88";"Mongolian tögrög";"MNT";"Möngö";"100"
+"89";"Macanese pataca";"MOP";"Avo";"100"
+"90";"Mauritanian ouguiya";"MRU";"Khoums";"5"
+"91";"Mauritian rupee";"MUR";"Cent";"100"
+"92";"Maldivian rufiyaa";"MVR";"Laari";"100"
+"93";"Malawian kwacha";"MWK";"Tambala";"100"
+"94";"Mexican peso";"MXN";"Centavo";"100"
+"95";"Malaysian ringgit";"MYR";"Sen";"100"
+"96";"Mozambican metical";"MZN";"Centavo";"100"
+"97";"Namibian dollar";"NAD";"Cent";"100"
+"98";"Nigerian naira";"NGN";"Kobo";"100"
+"99";"Nicaraguan córdoba";"NIO";"Centavo";"100"
+"100";"Norwegian krone";"NOK";"Øre";"100"
+"101";"Nepalese rupee";"NPR";"Paisa";"100"
+"102";"New Zealand dollar";"NZD";"Cent";"100"
+"103";"Omani rial";"OMR";"Baisa";"1000"
+"104";"Panamanian balboa";"PAB";"Centésimo";"100"
+"105";"Peruvian sol";"PEN";"Céntimo";"100"
+"106";"Papua New Guinean kina";"PGK";"Toea";"100"
+"107";"Philippine peso";"PHP";"Sentimo";"100"
+"108";"Pakistani rupee";"PKR";"Paisa";"100"
+"109";"Polish złoty";"PLN";"Grosz";"100"
+"110";"Paraguayan guaraní";"PYG";"Céntimo";"100"
+"111";"Qatari riyal";"QAR";"Dirham";"100"
+"112";"Romanian leu";"RON";"Ban";"100"
+"113";"Serbian dinar";"RSD";"Para";"100"
+"114";"Russian ruble";"RUB";"Kopeck";"100"
+"115";"Rwandan franc";"RWF";"Centime";"100"
+"116";"Saudi riyal";"SAR";"Halala";"100"
+"117";"Solomon Islands dollar";"SBD";"Cent";"100"
+"118";"Seychellois rupee";"SCR";"Cent";"100"
+"119";"Sudanese pound";"SDG";"Piastre";"100"
+"120";"Swedish krona";"SEK";"Öre";"100"
+"121";"Singapore dollar";"SGD";"Cent";"100"
+"122";"Saint Helena pound";"SHP";"Penny";"100"
+"123";"Sierra Leonean leone";"SLE";"Cent";"100"
+"124";"Somali shilling";"SOS";"Cent";"100"
+"125";"Surinamese dollar";"SRD";"Cent";"100"
+"126";"South Sudanese pound";"SSP";"Piaster";"100"
+"127";"São Tomé and Príncipe dobra";"STN";"Cêntimo";"100"
+"128";"Syrian pound";"SYP";"Piastre";"100"
+"129";"Swazi lilangeni";"SZL";"Cent";"100"
+"130";"Thai baht";"THB";"Satang";"100"
+"131";"Tajikistani somoni";"TJS";"Diram";"100"
+"132";"Turkmenistani manat";"TMT";"Tenge";"100"
+"133";"Tunisian dinar";"TND";"Millime";"1000"
+"134";"Tongan paʻanga";"TOP";"Seniti";"100"
+"135";"Turkish lira";"TRY";"Kuruş";"100"
+"136";"Trinidad and Tobago dollar";"TTD";"Cent";"100"
+"137";"New Taiwan dollar";"TWD";"Cent";"100"
+"138";"Tanzanian shilling";"TZS";"Cent";"100"
+"139";"Ukrainian hryvnia";"UAH";"Kopeck";"100"
+"140";"Ugandan shilling";"UGX";"";""
+"141";"United States dollar";"USD";"Cent";"100"
+"142";"Uruguayan peso";"UYU";"Centésimo";"100"
+"143";"Uzbekistani sum";"UZS";"Tiyin";"100"
+"144";"Venezuelan digital bolívar";"VED";"Céntimo";"100"
+"145";"Venezuelan sovereign bolívar";"VES";"Céntimo";"1"
+"146";"Vietnamese đồng";"VND";"Hào";"10"
+"147";"Vanuatu vatu";"VUV";"Cent";"100"
+"148";"Samoan tālā";"WST";"Sene";"100"
+"149";"Central African CFA franc";"XAF";"Centime";"100"
+"150";"Eastern Caribbean dollar";"XCD";"Cent";"100"
+"151";"West African CFA franc";"XOF";"Centime";"100"
+"152";"CFP franc";"XPF";"Centime";"100"
+"153";"Yemeni rial";"YER";"Fils";"100"
+"154";"South African rand";"ZAR";"Cent";"100"
+"155";"Zambian kwacha";"ZMW";"Ngwee";"100"
+]]>
+	</initial-data>
+</table>
+
+<table name="analyst_ratings" layers="0" collapse-mode="2" max-obj-count="10" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment> <![CDATA[Average from analyst ratings]]> </comment>
+	<position x="3440" y="1100"/>
+	<column name="security" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="date_added" not-null="true" default-value="CURRENT_DATE">
+		<type name="date" length="0"/>
+	</column>
+	<column name="rating">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="target_price">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="strong_buy" not-null="true" default-value="0">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="buy" not-null="true" default-value="0">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="hold" not-null="true" default-value="0">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="sell" not-null="true" default-value="0">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="strong_sell" not-null="true" default-value="0">
+		<type name="smallint" length="0"/>
+	</column>
+</table>
+
+<table name="exchanges" layers="0" collapse-mode="2" max-obj-count="16" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="180" y="680"/>
+	<column name="id" not-null="true">
+		<type name="bigserial" length="0"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="code" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="code_alias">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[Alias for the exchange name
+NYSE MKT -> AMEX
+Used for TradingView exchange name]]> </comment>
+	</column>
+	<column name="operating_mic">
+		<type name="text" length="0"/>
+	</column>
+	<column name="country">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="currency">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="virtual_exchange">
+		<type name="text" length="0"/>
+	</column>
+	<column name="timezone">
+		<type name="text" length="0"/>
+	</column>
+	<column name="working_days">
+		<type name="text" length="0"/>
+	</column>
+	<column name="open">
+		<type name="time" length="0"/>
+	</column>
+	<column name="close">
+		<type name="time" length="0"/>
+	</column>
+	<column name="open_utc">
+		<type name="time" length="0"/>
+	</column>
+	<column name="close_utc">
+		<type name="time" length="0"/>
+	</column>
+	<constraint name="exchanges_id_pk" type="pk-constr" table="public.exchanges">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="exchanges_code_uq" type="uq-constr" table="public.exchanges">
+		<columns names="code" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="exchanges_name_uq" type="uq-constr" table="public.exchanges">
+		<columns names="name" ref-type="src-columns"/>
+	</constraint>
+	<initial-data>
+<![CDATA["id";"name";"code";"operating_mic";"country";"currency";"virtual_exchange";"timezone";"working_days";"open";"close";"open_utc";"close_utc"
+"1";"USA Stocks";"US";"";"237";"141";"US";"America/New_York";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+"2";"NASDAQ";"NASDAQ";"XNAS";"237";"141";"US";"America/New_York";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+"3";"New York Stock Exchange";"NYSE";"XNYS";"237";"141";"US";"America/New_York";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+"4";"Cboe BZX U.S. Equities Exchange";"BATS";"BATS";"237";"141";"US";"America/New_York";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+"5";"NYSE MKT";"NYSE MKT";"XASE";"237";"141";"US";"America/New_York";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+"6";"NYSE ARCA";"NYSE ARCA";"ARCX";"237";"141";"US";"America/New_York";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+"7";"London Exchange";"LSE";"XLON";"235";"47";"";"Europe/London";"Mon,Tue,Wed,Thu,Fri";"08:00:00";"16:30:00";"08:00:00";"16:30:00"
+"8";"NEO Exchange";"NEO";"NEOE";"41";"27";"";"America/Toronto";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+"9";"TSX Venture Exchange";"V";"XTSX";"41";"27";"";"America/Toronto";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+"10";"Toronto Exchange";"TO";"XTSE";"41";"27";"";"America/Toronto";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+"11";"Germany Stocks";"DE";"";"84";"44";"DE";"Europe/Berlin";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"17:30:00";"08:00:00";"16:30:00"
+"12";"Berlin Exchange";"BE";"XBER";"84";"44";"";"Europe/Berlin";"Mon,Tue,Wed,Thu,Fri";"08:00:00";"20:00:00";"07:00:00";"19:00:00"
+"13";"Hamburg Exchange";"HM";"XHAM";"84";"44";"";"Europe/Berlin";"Mon,Tue,Wed,Thu,Fri";"08:00:00";"20:00:00";"07:00:00";"19:00:00"
+"14";"XETRA Exchange";"XETRA";"XETR";"84";"44";"";"Europe/Berlin";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"17:30:00";"08:00:00";"16:30:00"
+"15";"Dusseldorf Exchange";"DU";"XDUS";"84";"44";"";"Europe/Berlin";"Mon,Tue,Wed,Thu,Fri";"08:00:00";"20:00:00";"07:00:00";"19:00:00"
+"16";"Munich Exchange";"MU";"XMUN";"84";"44";"";"Europe/Berlin";"Mon,Tue,Wed,Thu,Fri";"08:00:00";"20:00:00";"07:00:00";"19:00:00"
+"17";"Hanover Exchange";"HA";"XHAN";"84";"44";"";"Europe/Berlin";"Mon,Tue,Wed,Thu,Fri";"08:00:00";"20:00:00";"07:00:00";"19:00:00"
+"18";"Frankfurt Exchange";"F";"XFRA";"84";"44";"";"Europe/Berlin";"Mon,Tue,Wed,Thu,Fri";"08:00:00";"22:00:00";"07:00:00";"21:00:00"
+"19";"Stuttgart Exchange";"STU";"XSTU";"84";"44";"";"Europe/Berlin";"Mon,Tue,Wed,Thu,Fri";"08:00:00";"22:00:00";"07:00:00";"21:00:00"
+"20";"Vienna Exchange";"VI";"XWBO";"15";"44";"";"Europe/Vienna";"Mon,Tue,Wed,Thu,Fri";"08:55:00";"17:35:00";"07:55:00";"16:35:00"
+"21";"Luxembourg Stock Exchange";"LU";"XLUX";"131";"44";"";"Europe/Luxembourg";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"17:30:00";"08:00:00";"16:30:00"
+"22";"Euronext Paris";"PA";"XPAR";"77";"44";"";"Europe/Paris";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"17:30:00";"08:00:00";"16:30:00"
+"23";"Euronext Brussels";"BR";"XBRU";"22";"44";"";"Europe/Brussels";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"17:30:00";"08:00:00";"16:30:00"
+"24";"Madrid Exchange";"MC";"BMEX";"210";"44";"";"Europe/Rome";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"17:30:00";"08:00:00";"16:30:00"
+"25";"SIX Swiss Exchange";"SW";"XSWX";"216";"29";"";"Europe/Zurich";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"17:30:00";"08:00:00";"16:30:00"
+"26";"Euronext Lisbon";"LS";"XLIS";"179";"44";"";"Europe/Lisbon";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"17:30:00";"09:00:00";"17:30:00"
+"27";"Euronext Amsterdam";"AS";"XAMS";"157";"44";"";"Europe/Amsterdam";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"17:40:00";"08:00:00";"16:40:00"
+"28";"Stockholm Exchange";"ST";"XSTO";"215";"120";"";"Europe/Stockholm";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"17:30:00";"08:00:00";"16:30:00"
+"29";"Irish Exchange";"IR";"XDUB";"108";"44";"";"Europe/Dublin";"Mon,Tue,Wed,Thu,Fri";"08:00:00";"16:30:00";"08:00:00";"16:30:00"
+"30";"Copenhagen Exchange";"CO";"XCSE";"61";"38";"";"Europe/Copenhagen";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"17:00:00";"08:00:00";"16:00:00"
+"31";"Oslo Stock Exchange";"OL";"XOSL";"167";"100";"";"Europe/Oslo";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"17:30:00";"08:00:00";"16:30:00"
+"32";"Iceland Exchange";"IC";"XICE";"103";"64";"";"Atlantic/Reykjavik";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"15:30:00";"09:30:00";"15:30:00"
+"33";"Helsinki Exchange";"HE";"XHEL";"76";"44";"";"Europe/Helsinki";"Mon,Tue,Wed,Thu,Fri";"10:00:00";"18:30:00";"08:00:00";"16:30:00"
+"34";"Malawi Stock Exchange";"MSE";"XMSW";"134";"93";"";"Africa/Blantyre";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"15:00:00";"07:00:00";"13:00:00"
+"35";"Egyptian Exchange";"EGX";"NILX";"66";"41";"";"Africa/Cairo";"Mon,Tue,Wed,Thu,Sun";"10:00:00";"14:15:00";"08:00:00";"12:15:00"
+"36";"Botswana Stock Exchange ";"XBOT";"XBOT";"30";"24";"";"Africa/Gaborone";"Mon,Tue,Wed,Thu,Fri";"10:00:00";"14:00:00";"08:00:00";"12:00:00"
+"37";"Ghana Stock Exchange";"GSE";"XGHA";"85";"49";"";"Africa/Accra";"Mon,Tue,Wed,Thu,Fri";"10:00:00";"15:00:00";"10:00:00";"15:00:00"
+"38";"Regional Securities Exchange";"BRVM";"XBRV";"55";"151";"";"Africa/Abidjan";"Mon,Tue,Wed,Thu,Fri";"09:45:00";"14:00:00";"09:45:00";"14:00:00"
+"39";"Prague Stock Exchange ";"PR";"XPRA";"60";"36";"";"Europe/Prague";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"16:10:00";"08:00:00";"15:10:00"
+"40";"Nairobi Securities Exchange";"XNAI";"XNAI";"117";"68";"";"Africa/Nairobi";"Mon,Tue,Wed,Thu,Fri";"09:31:00";"15:00:00";"06:31:00";"12:00:00"
+"41";"Casablanca Stock Exchange";"BC";"XCAS";"151";"83";"";"Africa/Casablanca";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"15:20:00";"08:30:00";"14:20:00"
+"42";"Stock Exchange of Mauritius";"SEM";"XMAU";"142";"91";"";"Indian/Mauritius";"Mon,Tue,Wed,Thu,Fri";"10:00:00";"14:30:00";"06:00:00";"10:30:00"
+"43";"Nigerian Stock Exchange";"XNSA";"XNSA";"162";"98";"";"Africa/Lagos";"Mon,Tue,Wed,Thu,Fri";"10:00:00";"14:20:00";"09:00:00";"13:20:00"
+"44";"Rwanda Stock Exchange";"RSE";"RSEX";"185";"";"";"Africa/Kigali";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"12:00:00";"07:00:00";"10:00:00"
+"45";"Dar es Salaam Stock Exchange";"DSE";"XDAR";"220";"138";"";"Africa/Dar_es_Salaam";"Mon,Tue,Wed,Thu,Fri";"10:30:00";"16:00:00";"07:30:00";"13:00:00"
+"46";"Uganda Securities Exchange";"USE";"XUGA";"232";"140";"";"Africa/Kampala";"Mon,Tue,Wed,Thu,Fri";"10:00:00";"12:00:00";"07:00:00";"09:00:00"
+"47";"Lusaka Stock Exchange";"LUSE";"XLUS";"248";"155";"";"Africa/Lusaka";"Mon,Tue,Wed,Thu,Fri";"11:00:00";"14:00:00";"09:00:00";"12:00:00"
+"48";"Tel Aviv Exchange";"TA";"XTAE";"110";"60";"";"Asia/Jerusalem";"Mon,Tue,Wed,Thu,Sun";"09:45:00";"17:25:00";"07:45:00";"15:25:00"
+"49";"Zimbabwe Stock Exchange";"XZIM";"XZIM";"249";"";"";"Africa/Harare";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"13:00:00";"07:30:00";"11:00:00"
+"50";"Victoria Falls Stock Exchange";"VFEX";"VFEX";"249";"";"";"Africa/Harare";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"13:00:00";"07:30:00";"11:00:00"
+"51";"KOSDAQ";"KQ";"XKOS";"120";"73";"";"Asia/Seoul";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"15:30:00";"00:00:00";"06:30:00"
+"52";"Korea Stock Exchange";"KO";"XKRX";"120";"73";"";"Asia/Seoul";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"15:30:00";"00:00:00";"06:30:00"
+"53";"Budapest Stock Exchange";"BUD";"XBUD";"102";"58";"";"Europe/Budapest";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"17:00:00";"08:00:00";"16:00:00"
+"54";"Warsaw Stock Exchange";"WAR";"XWAR";"178";"109";"";"Europe/Warsaw";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"17:00:00";"08:00:00";"16:00:00"
+"55";"Philippine Stock Exchange";"PSE";"XPHS";"176";"107";"";"Asia/Manila";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"15:30:00";"01:30:00";"07:30:00"
+"56";"Chilean Stock Exchange";"SN";"XSGO";"45";"30";"";"America/Santiago";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"12:30:00";"19:00:00"
+"57";"Johannesburg Exchange";"JSE";"XJSE";"207";"154";"";"Africa/Johannesburg";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"17:00:00";"07:00:00";"15:00:00"
+"58";"Jakarta Exchange";"JK";"XIDX";"105";"59";"";"Asia/Jakarta";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"15:50:00";"02:00:00";"08:50:00"
+"59";"Thailand Exchange";"BK";"XBKK";"221";"130";"";"Asia/Bangkok";"Mon,Tue,Wed,Thu,Fri";"10:00:00";"16:30:00";"03:00:00";"09:30:00"
+"60";"Shanghai Exchange";"SHG";"XSHG";"46";"31";"";"Asia/Shanghai";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"15:00:00";"01:30:00";"07:00:00"
+"61";"NSE (India)";"NSE";"XNSE";"104";"61";"";"Asia/Calcutta";"Mon,Tue,Wed,Thu,Fri";"09:15:00";"15:30:00";"03:45:00";"10:00:00"
+"62";"Athens Exchange";"AT";"ASEX";"87";"44";"";"Europe/Athens";"Mon,Tue,Wed,Thu,Fri";"10:15:00";"17:20:00";"08:15:00";"15:20:00"
+"63";"Saudi Arabia Exchange";"SR";"XSAU";"196";"116";"";"Asia/Riyadh";"Mon,Tue,Wed,Thu,Sun";"10:00:00";"15:20:00";"07:00:00";"12:20:00"
+"64";"Shenzhen Exchange";"SHE";"XSHE";"46";"31";"";"Asia/Shanghai";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"15:00:00";"01:30:00";"07:00:00"
+"65";"Karachi Stock Exchange";"KAR";"XKAR";"169";"108";"";"Asia/Karachi";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"15:30:00";"04:30:00";"10:30:00"
+"66";"Australia Exchange";"AU";"XASX";"14";"8";"";"Australia/Sydney";"Mon,Tue,Wed,Thu,Fri";"10:00:00";"16:10:00";"23:00:00";"05:10:00"
+"67";"Colombo Stock Exchange";"CM";"XCOL";"211";"79";"";"Asia/Colombo";"Mon,Tue,Wed,Thu,Fri";"10:30:00";"14:30:00";"05:00:00";"09:00:00"
+"68";"Vietnam Stocks";"VN";"HSTC";"242";"146";"";"Asia/Ho_Chi_Minh";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"15:00:00";"02:00:00";"08:00:00"
+"69";"Kuala Lumpur Exchange";"KLSE";"XKLS";"135";"95";"";"Asia/Kuala_Lumpur";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"16:45:00";"01:00:00";"08:45:00"
+"70";"Buenos Aires Exchange";"BA";"XBUE";"11";"7";"";"America/Buenos_Aires";"Mon,Tue,Wed,Thu,Fri";"11:00:00";"17:00:00";"14:00:00";"20:00:00"
+"71";"Bucharest Stock Exchange";"RO";"XBSE";"183";"112";"";"Europe/Bucharest";"Mon,Tue,Wed,Thu,Fri";"10:00:00";"17:45:00";"08:00:00";"15:45:00"
+"72";"Sao Paolo Exchange";"SA";"BVMF";"32";"20";"";"America/Sao_Paulo";"Mon,Tue,Wed,Thu,Fri";"10:00:00";"18:00:00";"13:00:00";"21:00:00"
+"73";"Mexican Exchange";"MX";"XMEX";"144";"94";"";"America/Mexico_City";"Mon,Tue,Wed,Thu,Fri";"08:30:00";"15:00:00";"14:30:00";"21:00:00"
+"74";"Zagreb Stock Exchange";"ZSE";"XZAG";"56";"44";"";"Europe/Zagreb";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"16:00:00";"08:00:00";"15:00:00"
+"75";"Taiwan OTC Exchange";"TWO";"ROCO";"218";"137";"";"Asia/Taipei";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"13:30:00";"01:00:00";"05:30:00"
+"76";"MICEX Moscow Russia";"MCX";"";"184";"114";"";"Europe/Moscow";"Mon,Tue,Wed,Thu,Fri";"10:00:00";"23:50:00";"07:00:00";"20:50:00"
+"77";"Taiwan Exchange";"TW";"XTAI";"218";"137";"";"Asia/Taipei";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"13:30:00";"01:00:00";"05:30:00"
+"78";"Bolsa de Valores de Lima";"LIM";"XLIM";"175";"105";"";"America/Lima";"Mon,Tue,Wed,Thu,Fri";"08:30:00";"14:52:00";"13:30:00";"19:52:00"
+"79";"Money Market Virtual Exchange";"MONEY";"";"";"";"";"Europe/Paris";"Mon,Tue,Wed,Thu,Fri";"09:00:00";"16:00:00";"08:00:00";"15:00:00"
+"80";"Europe Fund Virtual Exchange";"EUFUND";"";"";"44";"";"UTC";"Mon,Tue,Wed,Thu,Fri";"00:00:00";"00:00:00";"00:00:00";"00:00:00"
+"81";"Istanbul Stock Exchange";"IS";"XIST";"228";"135";"";"Europe/Istanbul";"Mon,Tue,Wed,Thu,Fri";"10:00:00";"18:00:00";"07:00:00";"15:00:00"
+"82";"FOREX";"FOREX";"CDSL";"";"";"";"UTC";"Mon,Tue,Wed,Thu,Fri,Sat,Sun";"00:00:00";"23:59:00";"00:00:00";"23:59:00"
+"83";"Cryptocurrencies";"CC";"CRYP";"";"";"";"UTC";"Mon,Tue,Wed,Thu,Fri,Sat,Sun";"00:00:00";"23:59:00";"00:00:00";"23:59:00"
+"84";"PINK";"PINK";"";"237";"141";"US";"America/New_York";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+"85";"AMEX";"AMEX";"";"237";"141";"US";"America/New_York";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+"86";"NMFQS";"NMFQS";"";"237";"141";"US";"America/New_York";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+"87";"OTC";"OTC";"";"237";"141";"US";"America/New_York";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+"88";"OTCQX";"OTCQX";"";"237";"141";"US";"America/New_York";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+"89";"OTCQB";"OTCQB";"";"237";"141";"US";"America/New_York";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+"90";"OTCMKTS";"OTCMKTS";"";"237";"141";"US";"America/New_York";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+"91";"OTCGREY";"OTCGREY";"";"237";"141";"US";"America/New_York";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+"92";"OTCCE";"OTCCE";"";"237";"141";"US";"America/New_York";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+"93";"OTCBB";"OTCBB";"";"237";"141";"US";"America/New_York";"Mon,Tue,Wed,Thu,Fri";"09:30:00";"16:00:00";"14:30:00";"21:00:00"
+]]>
+	</initial-data>
+</table>
+
+<table name="earnings" layers="0" collapse-mode="2" max-obj-count="9" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="2820" y="2300"/>
+	<column name="security" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="date" not-null="true">
+		<type name="date" length="0"/>
+		<comment> <![CDATA[Fiscal year quarter date]]> </comment>
+	</column>
+	<column name="report_date" not-null="true">
+		<type name="date" length="0"/>
+		<comment> <![CDATA[Date of earnings report]]> </comment>
+	</column>
+	<column name="before_after" default-value="'?'">
+		<type name="text" length="0"/>
+	</column>
+	<column name="eps_actual">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="eps_estimate">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="eps_difference">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="surprise_percent">
+		<type name="numeric" length="0"/>
+	</column>
+	<constraint name="earnings_security_date_uq" type="uq-constr" table="public.earnings">
+		<columns names="security,date" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="option_expirations" layers="0" collapse-mode="2" max-obj-count="10" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="2920" y="80"/>
+	<column name="security" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="expiration" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="date" not-null="true">
+		<type name="date" length="0"/>
+		<comment> <![CDATA[Date of the historical snapshop.]]> </comment>
+	</column>
+	<column name="implied_volatility">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="put_volume">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="call_volume">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="put_open_interest">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="call_open_interest">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="max_pain">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[Maximum pain underlying price for this expiration date.]]> </comment>
+	</column>
+	<constraint name="option_expirations_security_expiration_date_uq" type="uq-constr" table="public.option_expirations">
+		<columns names="security,date,expiration" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="option_contracts" layers="0" collapse-mode="2" max-obj-count="24" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="3660" y="200"/>
+	<column name="security" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="contract_name" not-null="true">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[AAPL210730C00070000]]> </comment>
+	</column>
+	<column name="contract_size">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[REGULAR]]> </comment>
+	</column>
+	<column name="contract_period" not-null="true">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[WEEKLY or MONTHLY]]> </comment>
+	</column>
+	<column name="type" not-null="true">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[PUT or CALL]]> </comment>
+	</column>
+	<column name="last_trade_date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="expiration_date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="strike" not-null="true">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="last_price">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="bid">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="ask">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="theoretical_price">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="volume">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="open_interest">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="implied_volatility">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="delta">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="gamma">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="theta">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="vega">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="roh">
+		<type name="numeric" length="0"/>
+	</column>
+	<constraint name="option_contract_uq" type="uq-constr" table="public.option_contracts">
+		<columns names="security,type,last_trade_date,expiration_date,strike" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="volatility" layers="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment> <![CDATA[Historic underlying volatility and current options implied volatility.]]> </comment>
+	<position x="1540" y="660"/>
+	<column name="security" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="iv">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[Implied volatility 30 day from options]]> </comment>
+	</column>
+	<column name="hv">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[historic volatility 30 days]]> </comment>
+	</column>
+	<column name="ivr">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[Implied Volatility Rank 52 weeks]]> </comment>
+	</column>
+	<column name="ivp">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[Implied Volatility Percentil 52 weeks]]> </comment>
+	</column>
+	<constraint name="iv_security_date_uq" type="uq-constr" table="public.volatility">
+		<columns names="security,date" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="dividends" layers="0" collapse-mode="2" max-obj-count="9" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="3500" y="760"/>
+	<column name="security" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="declaration_date">
+		<type name="date" length="0"/>
+	</column>
+	<column name="record_date">
+		<type name="date" length="0"/>
+	</column>
+	<column name="payment_date">
+		<type name="date" length="0"/>
+	</column>
+	<column name="period">
+		<type name="text" length="0"/>
+		<comment> <![CDATA["Quarterly"]]> </comment>
+	</column>
+	<column name="adjusted_value">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="value" not-null="true">
+		<type name="numeric" length="0"/>
+	</column>
+	<constraint name="dividends_security_date_uq" type="uq-constr" table="public.dividends">
+		<columns names="security,date" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="splits" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment> <![CDATA[3.000000/1.000000
+You get 3 shares for every 1 share
+old = 1
+new = 3]]> </comment>
+	<position x="2420" y="120"/>
+	<column name="security" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="old" not-null="true">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="new" not-null="true">
+		<type name="numeric" length="0"/>
+	</column>
+	<constraint name="splits_security_date_uq" type="uq-constr" table="public.splits">
+		<columns names="security,date" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="addresses" layers="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment> <![CDATA[One or more addresses related with a company.]]> </comment>
+	<position x="1160" y="100"/>
+	<column name="security" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="country">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="street">
+		<type name="text" length="0"/>
+	</column>
+	<column name="city">
+		<type name="text" length="0"/>
+	</column>
+	<column name="state">
+		<type name="text" length="0"/>
+	</column>
+	<column name="zip">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="addresses_security_uq" type="uq-constr" table="public.addresses">
+		<columns names="security" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="forex_pair_quotes" layers="0" collapse-mode="2" max-obj-count="8" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="580" y="2500"/>
+	<column name="base" not-null="true">
+		<type name="bigint" length="0"/>
+		<comment> <![CDATA[Base currency
+BASE / QUOTE]]> </comment>
+	</column>
+	<column name="quote" not-null="true">
+		<type name="bigint" length="0"/>
+		<comment> <![CDATA[Quote currency
+BASE / QUOTE]]> </comment>
+	</column>
+	<column name="date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="open">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="high">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="low">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="close" not-null="true">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[Close price of this day.]]> </comment>
+	</column>
+	<constraint name="base_quote_date_uq" type="uq-constr" table="public.forex_pair_quotes">
+		<columns names="base,quote,date" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="annual_earnings" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="2620" y="640"/>
+	<column name="security" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="eps" not-null="true">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="pe_ratio">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[Price-Earnings-Ratio self calculated.
+Also available in security_highlights table from EOD.]]> </comment>
+	</column>
+	<constraint name="annual_earnings_security_date_uq" type="uq-constr" table="public.annual_earnings">
+		<columns names="security,date" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="insider_transactions" layers="0" collapse-mode="2" max-obj-count="16" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="620" y="60"/>
+	<column name="security" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="date" not-null="true">
+		<type name="date" length="0"/>
+		<comment> <![CDATA[This date is the transaction date.]]> </comment>
+	</column>
+	<column name="report_date">
+		<type name="date" length="0"/>
+	</column>
+	<column name="owner_cik">
+		<type name="text" length="0"/>
+	</column>
+	<column name="owner_name" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="owner_relationship">
+		<type name="text" length="0"/>
+	</column>
+	<column name="owner_title">
+		<type name="text" length="0"/>
+	</column>
+	<column name="transaction_date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="transaction_code" not-null="true">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[S = Sell
+P = Purchase]]> </comment>
+	</column>
+	<column name="transaction_amount" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="transaction_price" not-null="true">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="transaction_acquired_disposed">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[A or D]]> </comment>
+	</column>
+	<column name="post_transaction_amount">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="sec_link">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[URL to the SEC filing.
+Mostly a XML file to download.]]> </comment>
+	</column>
+	<constraint name="insiders_security_date_name_uq" type="uq-constr" table="public.insider_transactions">
+		<columns names="security,date,owner_name" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="etf_data" layers="0" collapse-mode="2" max-obj-count="10" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment> <![CDATA[Special data if security is an ETF.]]> </comment>
+	<position x="1060" y="2360"/>
+	<column name="security" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="company_name">
+		<type name="text" length="0"/>
+	</column>
+	<column name="company_url">
+		<type name="text" length="0"/>
+	</column>
+	<column name="etf_url">
+		<type name="text" length="0"/>
+	</column>
+	<column name="yield">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="dividend_paying_frequency">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[Monthly, Quarterly, Yearly]]> </comment>
+	</column>
+	<column name="inception_date">
+		<type name="date" length="0"/>
+	</column>
+	<column name="total_assets">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="holdings_count">
+		<type name="smallint" length="0"/>
+	</column>
+	<constraint name="etf_data_security_uq" type="uq-constr" table="public.etf_data">
+		<columns names="security" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="etf_holdings" layers="0" collapse-mode="2" max-obj-count="13" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="740" y="1920"/>
+	<column name="etf" not-null="true">
+		<type name="bigint" length="0"/>
+		<comment> <![CDATA[Security ID of the ETF.]]> </comment>
+	</column>
+	<column name="security">
+		<type name="bigint" length="0"/>
+		<comment> <![CDATA[Security ID of a single asset in this ETF.]]> </comment>
+	</column>
+	<column name="assets_percent">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[Percentage value of holding.]]> </comment>
+	</column>
+	<column name="code">
+		<type name="text" length="0"/>
+	</column>
+	<column name="exchange">
+		<type name="text" length="0"/>
+	</column>
+	<column name="name">
+		<type name="text" length="0"/>
+	</column>
+	<column name="gics_code">
+		<type name="bigint" length="0"/>
+		<comment> <![CDATA[GICS Code]]> </comment>
+	</column>
+	<column name="sector">
+		<type name="text" length="0"/>
+	</column>
+	<column name="industry">
+		<type name="text" length="0"/>
+	</column>
+	<column name="country">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="region">
+		<type name="text" length="0"/>
+	</column>
+</table>
+
+<table name="balance_sheets" layers="0" collapse-mode="2" max-obj-count="73" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1980" y="2740"/>
+	<column name="security" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="quarterly" not-null="true">
+		<type name="bool" length="0"/>
+		<comment> <![CDATA[quarterly = true
+yearly = false]]> </comment>
+	</column>
+	<column name="filing_date">
+		<type name="date" length="0"/>
+	</column>
+	<column name="total_assets">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="intangible_assets">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="earning_assets">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="other_current_assets">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="total_liab">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="total_stockholder_equity">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="deferred_long_term_liab">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="other_current_liab">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="common_stock">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="retained_earnings">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="other_liab">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="good_will">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="other_assets">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="cash">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="total_current_liabilities">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="net_debt">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="short_term_debt">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="short_long_term_debt">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="short_long_term_debt_total">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="other_stockholder_equity">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="property_plant_equipment">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="total_current_assets">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="long_term_investments">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="net_tangible_assets">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="short_term_investments">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="net_receivables">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="long_term_debt">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="inventory">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="accounts_payable">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="total_permanent_equity">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="noncontrolling_interest_in_consolidated_entity">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="temporary_equity_redeemable_noncontrolling_interests">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="accumulated_other_comprehensive_income">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="additional_paid_in_capital">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="common_stock_total_equity">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="preferred_stock_total_equity">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="retained_earnings_total_equity">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="treasury_stock">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="accumulated_amortization">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="non_currrent_assets_other">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="deferred_long_term_asset_charges">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="non_current_assets_total">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="capital_lease_obligations">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="long_term_debt_total">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="non_current_liabilities_other">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="non_current_liabilities_total">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="negative_goodwill">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="warrants">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="preferred_stock_redeemable">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="capital_surpluse">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="liabilities_and_stockholders_equity">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="cash_and_short_term_investments">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="property_plant_and_equipment_gross">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="accumulated_depreciation">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="net_working_capital">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="net_invested_capital">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="common_stock_shares_outstanding">
+		<type name="bigint" length="0"/>
+	</column>
+	<constraint name="balance_sheet_security_date_quarterly_uq" type="uq-constr" table="public.balance_sheets">
+		<columns names="security,date,quarterly" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="cash_flows" layers="0" collapse-mode="2" max-obj-count="37" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1400" y="2740"/>
+	<column name="security" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="quarterly" not-null="true">
+		<type name="bool" length="0"/>
+		<comment> <![CDATA[quarterly = true
+yearly = false]]> </comment>
+	</column>
+	<column name="filing_date">
+		<type name="date" length="0"/>
+	</column>
+	<column name="investments">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="change_to_liabilities">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="total_cashflows_from_investing_activities">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="net_borrowings">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="total_cash_from_financing_activities">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="change_to_operating_activities">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="net_income">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="change_in_cash">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="begin_period_cash_flow">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="end_period_cash_flow">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="total_cash_from_operating_activities">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="depreciation">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="other_cashflows_from_investing_activities">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="dividends_paid">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="change_to_inventory">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="change_to_account_receivables">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="sale_purchase_of_stock">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="other_cashflows_from_financing_activities">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="change_to_netincome">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="capital_expenditures">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="change_receivables">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="cash_flows_other_operating">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="exchange_rate_changes">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="cash_and_cash_equivalents_changes">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="change_in_working_capital">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="other_non_cash_items">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="free_cash_flow">
+		<type name="bigint" length="0"/>
+	</column>
+	<constraint name="cash_flow_security_date_quarterly_uq" type="uq-constr" table="public.cash_flows">
+		<columns names="security,date,quarterly" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="income_statements" layers="0" collapse-mode="2" max-obj-count="42" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="2660" y="2740"/>
+	<column name="security" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="quarterly" not-null="true">
+		<type name="bool" length="0"/>
+		<comment> <![CDATA[quarterly = true
+yearly = false]]> </comment>
+	</column>
+	<column name="filing_date">
+		<type name="date" length="0"/>
+	</column>
+	<column name="research_development">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="effect_of_accounting_charges">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="income_before_tax">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="minority_interest">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="net_income">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="selling_general_administrative">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="selling_and_marketing_expenses">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="gross_profit">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="reconciled_depreciation">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="ebit">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="ebitda">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="depreciation_and_amortization">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="non_operating_income_net_other">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="operating_income">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="other_operating_expenses">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="interest_expense">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="tax_provision">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="interest_income">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="net_interest_income">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="extraordinary_items">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="non_recurring">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="other_items">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="income_tax_expense">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="total_revenue">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="total_operating_expenses">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="cost_of_revenue">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="total_other_income_expense_net">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="discontinued_operations">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="net_income_from_continuing_ops">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="net_income_applicable_to_common_shares">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="preferred_stock_and_other_adjustments">
+		<type name="bigint" length="0"/>
+	</column>
+	<constraint name="income_statement_security_date_quarterly_uq" type="uq-constr" table="public.income_statements">
+		<columns names="security,date,quarterly" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="officers" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="3380" y="2000"/>
+	<column name="security" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="title" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="year_born">
+		<type name="smallint" length="0"/>
+	</column>
+</table>
+
+<index name="option_contracts_contract_name_last_trade_date_idx" table="public.option_contracts"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="contract_name"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="last_trade_date"/>
+		</idxelement>
+</index>
+
+<index name="insider_transactions_security_date_idx" table="public.insider_transactions"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="security"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="date"/>
+		</idxelement>
+</index>
+
+<index name="volatility_security_date_idx" table="public.volatility"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="security"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="date"/>
+		</idxelement>
+</index>
+
+<index name="splits_security_date_idx" table="public.splits"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="security"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="date"/>
+		</idxelement>
+</index>
+
+<index name="options_expirations_security_expiration_last_trade_date_idx" table="public.option_expirations"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="security"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="expiration"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="date"/>
+		</idxelement>
+</index>
+
+<index name="analyst_ratings_security_rating_idx" table="public.analyst_ratings"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="security"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="rating"/>
+		</idxelement>
+</index>
+
+<index name="dividends_security_date_idx" table="public.dividends"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="security"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="date"/>
+		</idxelement>
+</index>
+
+<index name="income_statements_quarterly_security_date_idx" table="public.income_statements"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="quarterly"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="security"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="date"/>
+		</idxelement>
+</index>
+
+<index name="cash_flows_quarterly_security_date_idx" table="public.cash_flows"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="quarterly"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="security"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="date"/>
+		</idxelement>
+</index>
+
+<index name="balance_sheets_quarterly_security_date_idx" table="public.balance_sheets"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="quarterly"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="security"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="date"/>
+		</idxelement>
+</index>
+
+<index name="securities_delisted_type_options_idx" table="public.securities"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="is_delisted"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="type"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="has_options"/>
+		</idxelement>
+</index>
+
+<table name="exchange_holidays" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="140" y="320"/>
+	<column name="exchange" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="half_day" not-null="true" default-value="FALSE">
+		<type name="boolean" length="0"/>
+		<comment> <![CDATA[True if shorter trading on this day.]]> </comment>
+	</column>
+	<column name="info">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[Additional information like 'public' or 'official']]> </comment>
+	</column>
+	<constraint name="exchange_date_name_uq" type="uq-constr" table="public.exchange_holidays">
+		<columns names="exchange,date,name" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="base_quote_date_idx" table="public.forex_pair_quotes"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="base"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="quote"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="date"/>
+		</idxelement>
+</index>
+
+<index name="securities_lower_code_idx" table="public.securities"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<expression> <![CDATA[lower(code)]]> </expression>
+		</idxelement>
+</index>
+
+<index name="securities_lower_name_idx" table="public.securities"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<expression> <![CDATA[lower(name)]]> </expression>
+		</idxelement>
+</index>
+
+<index name="securities_lower_isin_idx" table="public.securities"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<expression> <![CDATA[lower(isin)]]> </expression>
+		</idxelement>
+</index>
+
+<table name="option_contracts_last" layers="0" collapse-mode="2" max-obj-count="24" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment> <![CDATA[Just keep data of the last trading day]]> </comment>
+	<position x="3440" y="1440"/>
+	<column name="security" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="contract_name" not-null="true">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[AAPL210730C00070000]]> </comment>
+	</column>
+	<column name="contract_size">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[REGULAR]]> </comment>
+	</column>
+	<column name="contract_period" not-null="true">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[WEEKLY or MONTHLY]]> </comment>
+	</column>
+	<column name="type" not-null="true">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[PUT or CALL]]> </comment>
+	</column>
+	<column name="last_trade_date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="expiration_date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="strike" not-null="true">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="last_price">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="bid">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="ask">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="theoretical_price">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="volume">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="open_interest">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="implied_volatility">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="delta">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="gamma">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="theta">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="vega">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="roh">
+		<type name="numeric" length="0"/>
+	</column>
+	<constraint name="option_contract_last_uq" type="uq-constr" table="public.option_contracts_last">
+		<columns names="security,type,expiration_date,strike" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="option_contracts_contract_name_idx" table="public.option_contracts_last"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="contract_name"/>
+		</idxelement>
+</index>
+
+<table name="option_expirations_last" layers="0" collapse-mode="2" max-obj-count="10" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="3380" y="2240"/>
+	<column name="security" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="last_trade_date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="expiration_date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="implied_volatility" not-null="true">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="put_volume" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="call_volume" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="put_open_interest" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="call_open_interest" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="max_pain">
+		<type name="numeric" length="0"/>
+		<comment> <![CDATA[Maximum pain underlying price for this expiration date.]]> </comment>
+	</column>
+	<constraint name="option_expirations_last_security_date_uq" type="uq-constr" table="public.option_expirations_last">
+		<columns names="security,expiration_date" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="options_expirations_last_security_expiration_idx" table="public.option_expirations_last"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="security"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="expiration_date"/>
+		</idxelement>
+</index>
+
+<index name="quotes_security_date_idx" table="public.quotes"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="security"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="date"/>
+		</idxelement>
+</index>
+
+<index name="annual_earnings_security_date_idx" table="public.annual_earnings"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="security"/>
+		</idxelement>
+		<idxelement use-sorting="false">
+			<column name="date"/>
+		</idxelement>
+</index>
+
+<index name="exchanges_code_idx" table="public.exchanges"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="code"/>
+		</idxelement>
+</index>
+
+<index name="currencies_symbol_idx" table="public.currencies"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="iso_code"/>
+		</idxelement>
+</index>
+
+<table name="gics_codes" layers="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment> <![CDATA[GICS code, name and description.
+https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard]]> </comment>
+	<position x="1420" y="2000"/>
+	<column name="id" not-null="true">
+		<type name="bigint" length="0"/>
+		<comment> <![CDATA[GICS ID]]> </comment>
+	</column>
+	<column name="sector" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="industry_group">
+		<type name="text" length="0"/>
+	</column>
+	<column name="industry">
+		<type name="text" length="0"/>
+	</column>
+	<column name="sub_industry">
+		<type name="text" length="0"/>
+	</column>
+	<column name="description">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="gics_id_pk" type="pk-constr" table="public.gics_codes">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<initial-data>
+<![CDATA["id";"sector";"industry_group";"industry";"sub_industry";"description"
+"10";"Energy";"null";"null";"null";"null"
+"15";"Materials";"null";"null";"null";"null"
+"20";"Industrials";"null";"null";"null";"null"
+"25";"Consumer Discretionary";"null";"null";"null";"null"
+"30";"Consumer Staples";"null";"null";"null";"null"
+"35";"Health Care";"null";"null";"null";"null"
+"40";"Financials";"null";"null";"null";"null"
+"45";"Information Technology";"null";"null";"null";"null"
+"50";"Communication Services";"null";"null";"null";"null"
+"55";"Utilities";"null";"null";"null";"null"
+"60";"Real Estate";"null";"null";"null";"null"
+"1010";"Energy";"Energy";"null";"null";"null"
+"1510";"Materials";"Materials";"null";"null";"null"
+"2010";"Industrials";"Capital Goods";"null";"null";"null"
+"2020";"Industrials";"Commercial  & Professional Services";"null";"null";"null"
+"2030";"Industrials";"Transportation";"null";"null";"null"
+"2510";"Consumer Discretionary";"Automobiles & Components";"null";"null";"null"
+"2520";"Consumer Discretionary";"Consumer Durables & Apparel";"null";"null";"null"
+"2530";"Consumer Discretionary";"Consumer Services";"null";"null";"null"
+"2550";"Consumer Discretionary";"Retailing";"null";"null";"null"
+"3010";"Consumer Staples";"Food & Staples Retailing";"null";"null";"null"
+"3020";"Consumer Staples";"Food, Beverage & Tobacco";"null";"null";"null"
+"3030";"Consumer Staples";"Household & Personal Products";"null";"null";"null"
+"3510";"Health Care";"Health Care Equipment & Services";"null";"null";"null"
+"3520";"Health Care";"Pharmaceuticals, Biotechnology & Life Sciences";"null";"null";"null"
+"4010";"Financials";"Banks";"null";"null";"null"
+"4020";"Financials";"Diversified Financials";"null";"null";"null"
+"4030";"Financials";"Insurance";"null";"null";"null"
+"4510";"Information Technology";"Software & Services";"null";"null";"null"
+"4520";"Information Technology";"Technology Hardware & Equipment";"null";"null";"null"
+"4530";"Information Technology";"Semiconductors & Semiconductor Equipment";"null";"null";"null"
+"5010";"Communication Services";"Telecommunication Services";"null";"null";"null"
+"5020";"Communication Services";"Media & Entertainment";"null";"null";"null"
+"5510";"Utilities";"Utilities";"null";"null";"null"
+"6010";"Real Estate";"Real Estate";"null";"null";"null"
+"6020";"Real Estate";"Real Estate Management & Development";"null";"null";"null"
+"101010";"Energy";"Energy";"Energy Equipment & Services";"null";"null"
+"101020";"Energy";"Energy";"Oil, Gas & Consumable Fuels";"null";"null"
+"151010";"Materials";"Materials";"Chemicals";"null";"null"
+"151020";"Materials";"Materials";"Construction Materials";"null";"null"
+"151030";"Materials";"Materials";"Containers & Packaging";"null";"null"
+"151040";"Materials";"Materials";"Metals & Mining";"null";"null"
+"151050";"Materials";"Materials";"Paper & Forest Products";"null";"null"
+"201010";"Industrials";"Capital Goods";"Aerospace & Defense";"null";"null"
+"201020";"Industrials";"Capital Goods";"Building Products";"null";"null"
+"201030";"Industrials";"Capital Goods";"Construction & Engineering";"null";"null"
+"201040";"Industrials";"Capital Goods";"Electrical Equipment";"null";"null"
+"201050";"Industrials";"Capital Goods";"Industrial Conglomerates";"null";"null"
+"201060";"Industrials";"Capital Goods";"Machinery";"null";"null"
+"201070";"Industrials";"Capital Goods";"Trading Companies & Distributors";"null";"null"
+"202010";"Industrials";"Commercial  & Professional Services";"Commercial Services & Supplies";"null";"null"
+"202020";"Industrials";"Commercial  & Professional Services";"Professional Services";"null";"null"
+"203010";"Industrials";"Transportation";"Air Freight & Logistics";"null";"null"
+"203020";"Industrials";"Transportation";"Airlines";"null";"null"
+"203030";"Industrials";"Transportation";"Marine";"null";"null"
+"203040";"Industrials";"Transportation";"Road & Rail";"null";"null"
+"203050";"Industrials";"Transportation";"Transportation Infrastructure";"null";"null"
+"251010";"Consumer Discretionary";"Automobiles & Components";"Auto Components";"null";"null"
+"251020";"Consumer Discretionary";"Automobiles & Components";"Automobiles";"null";"null"
+"252010";"Consumer Discretionary";"Consumer Durables & Apparel";"Household Durables";"null";"null"
+"252020";"Consumer Discretionary";"Consumer Durables & Apparel";"Leisure Products";"null";"null"
+"252030";"Consumer Discretionary";"Consumer Durables & Apparel";"Textiles, Apparel & Luxury Goods";"null";"null"
+"253010";"Consumer Discretionary";"Consumer Services";"Hotels, Restaurants & Leisure";"null";"null"
+"253020";"Consumer Discretionary";"Consumer Services";"Diversified Consumer Services";"null";"null"
+"255010";"Consumer Discretionary";"Retailing";"Distributors";"null";"null"
+"255020";"Consumer Discretionary";"Retailing";"Internet & Direct Marketing Retail";"null";"null"
+"255030";"Consumer Discretionary";"Retailing";"Multiline Retail";"null";"null"
+"255040";"Consumer Discretionary";"Retailing";"Specialty Retail";"null";"null"
+"301010";"Consumer Staples";"Food & Staples Retailing";"Food & Staples Retailing";"null";"null"
+"302010";"Consumer Staples";"Food, Beverage & Tobacco";"Beverages";"null";"null"
+"302020";"Consumer Staples";"Food, Beverage & Tobacco";"Food Products";"null";"null"
+"302030";"Consumer Staples";"Food, Beverage & Tobacco";"Tobacco";"null";"null"
+"303010";"Consumer Staples";"Household & Personal Products";"Household Products";"null";"null"
+"303020";"Consumer Staples";"Household & Personal Products";"Personal Products";"null";"null"
+"351010";"Health Care";"Health Care Equipment & Services";"Health Care Equipment & Supplies";"null";"null"
+"351020";"Health Care";"Health Care Equipment & Services";"Health Care Providers & Services";"null";"null"
+"351030";"Health Care";"Health Care Equipment & Services";"Health Care Technology";"null";"null"
+"352010";"Health Care";"Pharmaceuticals, Biotechnology & Life Sciences";"Biotechnology";"null";"null"
+"352020";"Health Care";"Pharmaceuticals, Biotechnology & Life Sciences";"Pharmaceuticals";"null";"null"
+"352030";"Health Care";"Pharmaceuticals, Biotechnology & Life Sciences";"Life Sciences Tools & Services";"null";"null"
+"401010";"Financials";"Banks";"Banks";"null";"null"
+"401020";"Financials";"Banks";"Thrifts & Mortgage Finance";"null";"null"
+"402010";"Financials";"Diversified Financials";"Diversified Financial Services";"null";"null"
+"402020";"Financials";"Diversified Financials";"Consumer Finance";"null";"null"
+"402030";"Financials";"Diversified Financials";"Capital Markets";"null";"null"
+"402040";"Financials";"Diversified Financials";"Mortgage Real Estate Investment Trusts (REITs)";"null";"null"
+"403010";"Financials";"Insurance";"Insurance";"null";"null"
+"451020";"Information Technology";"Software & Services";"IT Services";"null";"null"
+"451030";"Information Technology";"Software & Services";"Software";"null";"null"
+"452010";"Information Technology";"Technology Hardware & Equipment";"Communications Equipment";"null";"null"
+"452020";"Information Technology";"Technology Hardware & Equipment";"Technology Hardware, Storage & Peripherals";"null";"null"
+"452030";"Information Technology";"Technology Hardware & Equipment";"Electronic Equipment, Instruments & Components";"null";"null"
+"453010";"Information Technology";"Semiconductors & Semiconductor Equipment";"Semiconductors & Semiconductor Equipment";"null";"null"
+"501010";"Communication Services";"Telecommunication Services";"Diversified Telecommunication Services";"null";"null"
+"501020";"Communication Services";"Telecommunication Services";"Wireless Telecommunication Services";"null";"null"
+"502010";"Communication Services";"Media & Entertainment";"Media";"null";"null"
+"502020";"Communication Services";"Media & Entertainment";"Entertainment";"null";"null"
+"502030";"Communication Services";"Media & Entertainment";"Interactive Media & Services";"null";"null"
+"551010";"Utilities";"Utilities";"Electric Utilities";"null";"null"
+"551020";"Utilities";"Utilities";"Gas Utilities";"null";"null"
+"551030";"Utilities";"Utilities";"Multi-Utilities";"null";"null"
+"551040";"Utilities";"Utilities";"Water Utilities";"null";"null"
+"551050";"Utilities";"Utilities";"Independent Power and Renewable Electricity Producers";"null";"null"
+"601010";"Real Estate";"Real Estate";"Diversified REITs";"null";"null"
+"601020";"Real Estate";"Real Estate";"Real Estate Management & Development";"null";"null"
+"601025";"Real Estate";"Real Estate";"Industrial REITs";"null";"null"
+"601030";"Real Estate";"Real Estate";"Hotel & Resort REITs";"null";"null"
+"601040";"Real Estate";"Real Estate";"Office REITs";"null";"null"
+"601050";"Real Estate";"Real Estate";"Health Care REITs";"null";"null"
+"601060";"Real Estate";"Real Estate";"Residential REITs";"null";"null"
+"601070";"Real Estate";"Real Estate";"Retail REITs";"null";"null"
+"601080";"Real Estate";"Real Estate";"Specialized REITs";"null";"null"
+"602010";"Real Estate";"Real Estate Management & Development";"Real Estate Management & Development";"null";"null"
+"10101010";"Energy";"Energy";"Energy Equipment & Services";"Oil & Gas Drilling";"Drilling contractors or owners of drilling rigs that contract their services for drilling wells"
+"10101020";"Energy";"Energy";"Energy Equipment & Services";"Oil & Gas Equipment & Services";"Manufacturers of equipment, including drilling rigs and equipment, and providers of supplies and services to companies involved in the drilling, evaluation and completion of oil and gas wells."
+"10102010";"Energy";"Energy";"Oil, Gas & Consumable Fuels";"Integrated Oil & Gas";"Integrated oil companies engaged in the exploration & production of oil and gas, as well as at least one other significant activity in either refining, marketing and transportation, or chemicals."
+"10102020";"Energy";"Energy";"Oil, Gas & Consumable Fuels";"Oil & Gas Exploration & Production";"Companies engaged in the exploration and production of oil and gas not classified elsewhere."
+"10102030";"Energy";"Energy";"Oil, Gas & Consumable Fuels";"Oil & Gas Refining & Marketing";"Companies engaged in the refining and marketing of oil, gas and/or refined products not classified in the Integrated Oil & Gas or Independent Power Producers & Energy Traders Sub-Industries."
+"10102040";"Energy";"Energy";"Oil, Gas & Consumable Fuels";"Oil & Gas Storage & Transportation";"Companies engaged in the storage and/or transportation of oil, gas and/or refined products. Includes diversified midstream natural gas companies, oil and refined product pipelines, coal slurry pipelines and oil & gas shipping companies."
+"10102050";"Energy";"Energy";"Oil, Gas & Consumable Fuels";"Coal & Consumable Fuels";"Companies primarily involved in the production and mining of coal, related products and other consumable fuels related to the generation of energy.  Excludes companies primarily producing gases classified in the Industrial Gases sub-industry and companies primarily mining for metallurgical (coking) coal used for steel production."
+"15101010";"Materials";"Materials";"Chemicals";"Commodity Chemicals";"Companies that primarily produce industrial chemicals and basic chemicals. Including but not limited to plastics, synthetic fibers, films, commodity-based paints & pigments, explosives and petrochemicals. Excludes chemicalcompanies classified in the Diversified Chemicals, Fertilizers & Agricultural Chemicals, Industrial Gases, or Specialty Chemicals Sub-Industries."
+"15101020";"Materials";"Materials";"Chemicals";"Diversified Chemicals";"Manufacturers of a diversified range of chemical products not classified in the Industrial Gases, Commodity Chemicals, Specialty Chemicals or Fertilizers & Agricultural Chemicals Sub-Industries."
+"15101030";"Materials";"Materials";"Chemicals";"Fertilizers & Agricultural Chemicals";"Producers of fertilizers, pesticides, potash or other agriculture-related chemicals not classified elsewhere."
+"15101040";"Materials";"Materials";"Chemicals";"Industrial Gases";"Manufacturers of industrial gases."
+"15101050";"Materials";"Materials";"Chemicals";"Specialty Chemicals";"Companies that primarily produce high value-added chemicals used in the manufacture of a wide variety of products, including but not limited to fine chemicals, additives, advanced polymers, adhesives, sealants and specialty paints, pigments and coatings."
+"15102010";"Materials";"Materials";"Construction Materials";"Construction Materials";"Manufacturers of construction materials including sand, clay, gypsum, lime, aggregates, cement, concrete and bricks. Other finished or semi-finished building materials are classified  in the Building Products Sub-Industry."
+"15103010";"Materials";"Materials";"Containers & Packaging";"Metal & Glass Containers";"Manufacturers of metal, glass or plastic containers. Includes corks and caps."
+"15103020";"Materials";"Materials";"Containers & Packaging";"Paper Packaging";"Manufacturers of paper and cardboard containers and packaging."
+"15104010";"Materials";"Materials";"Metals & Mining";"Aluminum";"Producers of aluminum and related products, including companies that mine or process bauxite and companies that recycle aluminum to produce finished or semi-finished products. Excludes companies that primarily produce aluminum building materials classified in the Building Products Sub-Industry."
+"15104020";"Materials";"Materials";"Metals & Mining";"Diversified Metals & Mining";"Companies engaged in the diversified production or extraction of metals and minerals not classified elsewhere. Including, but not limited to, nonferrous metal mining (except bauxite), salt and borate mining, phosphate rock mining, and diversified mining operations. Excludes iron ore mining, classified in the Steel Sub-Industry, bauxite mining, classified in the Aluminum Sub-Industry, and coal mining, classified in either the Steel or Coal & Consumable Fuels Sub-Industries."
+"15104025";"Materials";"Materials";"Metals & Mining";"Copper";"Companies involved primarily in copper ore mining. "
+"15104030";"Materials";"Materials";"Metals & Mining";"Gold";"Producers of gold and related products, including companies that mine or process gold and the South African finance houses which primarily invest in, but do not operate, gold mines."
+"15104040";"Materials";"Materials";"Metals & Mining";"Precious Metals & Minerals";"Companies mining precious metals and minerals not classified in the Gold Sub-Industry. Includes companies primarily mining platinum."
+"15104045";"Materials";"Materials";"Metals & Mining";"Silver";"Companies primarily mining silver. Excludes companies classified in the Gold or Precious Metals & Minerals Sub-Industries."
+"15104050";"Materials";"Materials";"Metals & Mining";"Steel";"Producers of iron and steel and related products, including metallurgical (coking) coal mining used for steel production."
+"15105010";"Materials";"Materials";"Paper & Forest Products";"Forest Products";"Manufacturers of timber and related wood products. Includes lumber for the building industry."
+"15105020";"Materials";"Materials";"Paper & Forest Products";"Paper Products";"Manufacturersof all grades of paper. Excludes companies specializing in paper packaging classified in the Paper Packaging Sub-Industry."
+"20101010";"Industrials";"Capital Goods";"Aerospace & Defense";"Aerospace & Defense";"Manufacturers of civil or military aerospace and defense equipment, parts or products. Includes defense electronics and space equipment."
+"20102010";"Industrials";"Capital Goods";"Building Products";"Building Products";"Manufacturers of building components and home improvement products and equipment. Excludes lumber and plywood classified under Forest Products and cement and other materials classified in the Construction Materials Sub-Industry."
+"20103010";"Industrials";"Capital Goods";"Construction & Engineering";"Construction & Engineering";"Companies engaged in primarily non-residential construction. Includes civil engineering companies and large-scale contractors. Excludes companies classified in the Homebuilding Sub-Industry."
+"20104010";"Industrials";"Capital Goods";"Electrical Equipment";"Electrical Components & Equipment";"Companies that produce electric cables and wires, electrical components or equipment not classified in the Heavy Electrical Equipment Sub-Industry."
+"20104020";"Industrials";"Capital Goods";"Electrical Equipment";"Heavy Electrical Equipment";"Manufacturers of power-generating equipment and other heavy electrical equipment, including power turbines, heavy electrical machinery intended for fixed-use and large electrical systems. Excludes cables and wires, classified in the Electrical Components & Equipment Sub-Industry."
+"20105010";"Industrials";"Capital Goods";"Industrial Conglomerates";"Industrial Conglomerates";"Diversified industrial companies with business activities in three or more sectors, none of which contributes a majority of revenues. Stakes held are predominantly of a controlling nature and stake holders maintain an operational interest in the running of the subsidiaries."
+"20106010";"Industrials";"Capital Goods";"Machinery";"Construction Machinery & Heavy Trucks";"Manufacturers of heavy duty trucks, rolling machinery, earth-moving and construction equipment, and manufacturers of related parts. Includes non-military shipbuilding."
+"20106015";"Industrials";"Capital Goods";"Machinery";"Agricultural & Farm Machinery";"Companies manufacturing agricultural machinery, farm machinery, and their related parts. Includes machinery used for the production of crops and agricultural livestock, agricultural tractors, planting and fertilizing machinery, fertilizer and chemical application equipment, and grain dryers and blowers."
+"20106020";"Industrials";"Capital Goods";"Machinery";"Industrial Machinery";"Manufacturers of industrial machinery and industrial components. Includes companies that manufacture presses, machine tools, compressors, pollution control equipment, elevators, escalators, insulators, pumps, roller bearings and other metal fabrications."
+"20107010";"Industrials";"Capital Goods";"Trading Companies & Distributors";"Trading Companies & Distributors";"Trading companies and other distributors of industrial equipment and products."
+"20201010";"Industrials";"Commercial  & Professional Services";"Commercial Services & Supplies";"Commercial Printing";"Companies providing commercial printing services. Includes printers primarily serving the media industry."
+"20201050";"Industrials";"Commercial  & Professional Services";"Commercial Services & Supplies";"Environmental & Facilities Services";"Companies providing environmental and facilities maintenance services. Includes waste management, facilities management and pollution control services.  Excludes large-scale water treatment systems classified in the Water Utilities Sub-Industry."
+"20201060";"Industrials";"Commercial  & Professional Services";"Commercial Services & Supplies";"Office Services & Supplies";"Providers of office services and manufacturers of office supplies and equipment not classified elsewhere."
+"20201070";"Industrials";"Commercial  & Professional Services";"Commercial Services & Supplies";"Diversified Support Services";"Companies primarily providing labor oriented support services to businesses and governments.  Includes commercial cleaning services, dining & catering services, equipment repair services, industrial maintenance services, industrial auctioneers, storage & warehousing, transaction services, uniform rental services, and other business support services."
+"20201080";"Industrials";"Commercial  & Professional Services";"Commercial Services & Supplies";"Security & Alarm Services";"Companies providing security and protection services to business and governments. Includes companies providing services such as correctional facilities, security & alarm services, armored transportation & guarding.  Excludes companies providing security software classified under the Systems Software Sub-Industry and home security services classified under the Specialized Consumer Services Sub-Industry. Also excludes companies manufacturing security system equipment classified under the Electronic Equipment & Instruments Sub-Industry. "
+"20202010";"Industrials";"Commercial  & Professional Services";"Professional Services";"Human Resource & Employment Services";"Companies providing business support services relating to human capital management. Includes employment agencies, employee training, payroll & benefit support services, retirement support services and temporary agencies."
+"20202020";"Industrials";"Commercial  & Professional Services";"Professional Services";"Research & Consulting Services";"Companies primarily providing research and consulting services to businesses and governments not classified elsewhere.  Includes companies involved in management consulting services, architectural design, business information or scientific research, marketing, and testing & certification services. Excludes companies providing information technology consulting services classified in the IT Consulting & Other Services Sub-Industry."
+"20301010";"Industrials";"Transportation";"Air Freight & Logistics";"Air Freight & Logistics";"Companies providing air freight transportation, courier and logistics services, including package and mail delivery and customs agents. Excludes those companies classified in the Airlines, Marine or Trucking Sub-Industries."
+"20302010";"Industrials";"Transportation";"Airlines";"Airlines";"Companies providing primarily passenger air transportation."
+"20303010";"Industrials";"Transportation";"Marine";"Marine";"Companies providing goods or passenger maritime transportation. Excludes cruise-ships classified in the Hotels, Resorts & Cruise Lines Sub-Industry."
+"20304010";"Industrials";"Transportation";"Road & Rail";"Railroads";"Companies providing primarily goods and passenger rail  transportation."
+"20304020";"Industrials";"Transportation";"Road & Rail";"Trucking";"Companies providing primarily goods and passenger land transportation. Includes vehicle rental and taxi companies."
+"20305010";"Industrials";"Transportation";"Transportation Infrastructure";"Airport Services";"Operators of airports and companies providing related services."
+"20305020";"Industrials";"Transportation";"Transportation Infrastructure";"Highways & Railtracks";"Owners and operators of roads, tunnels and railtracks."
+"20305030";"Industrials";"Transportation";"Transportation Infrastructure";"Marine Ports & Services";"Owners and operators of marine ports and related services."
+"25101010";"Consumer Discretionary";"Automobiles & Components";"Auto Components";"Auto Parts & Equipment";"Manufacturers of parts and accessories for  automobiles and motorcycles. Excludes companies classified in the Tires & Rubber Sub-Industry."
+"25101020";"Consumer Discretionary";"Automobiles & Components";"Auto Components";"Tires & Rubber";"Manufacturers of tires and rubber."
+"25102010";"Consumer Discretionary";"Automobiles & Components";"Automobiles";"Automobile Manufacturers";"Companies that produce mainly passenger automobiles and light trucks. Excludes companies producing mainly motorcycles and three-wheelers classified in the Motorcycle Manufacturers Sub-Industry and heavy duty trucks classified in the Construction Machinery & Heavy Trucks Sub-Industry."
+"25102020";"Consumer Discretionary";"Automobiles & Components";"Automobiles";"Motorcycle Manufacturers";"Companies that produce motorcycles, scooters or three-wheelers. Excludes bicycles classified in the Leisure Products Sub-Industry. "
+"25201010";"Consumer Discretionary";"Consumer Durables & Apparel";"Household Durables";"Consumer Electronics";"Manufacturers of consumer electronics products including TVs, home audio equipment, game consoles, digital cameras, and related products. Excludes personal home computer manufacturers classified in the Technology Hardware, Storage & Peripherals Sub-Industry, and electric household appliances classified in the Household Appliances Sub-Industry."
+"25201020";"Consumer Discretionary";"Consumer Durables & Apparel";"Household Durables";"Home Furnishings";"Manufacturers of soft home furnishings or furniture, including upholstery, carpets and wall-coverings."
+"25201030";"Consumer Discretionary";"Consumer Durables & Apparel";"Household Durables";"Homebuilding";"Residential construction companies. Includes manufacturers of prefabricated houses and semi-fixed manufactured homes."
+"25201040";"Consumer Discretionary";"Consumer Durables & Apparel";"Household Durables";"Household Appliances";"Manufacturers of electric household appliances and related products.  Includes manufacturers of power and hand tools, including garden improvement tools.  Excludes TVs and other audio and video products classified in the Consumer Electronics Sub-Industry and personal computers classified in the Technology Hardware, Storage & Peripherals Sub-Industry."
+"25201050";"Consumer Discretionary";"Consumer Durables & Apparel";"Household Durables";"Housewares & Specialties";"Manufacturers of durable household products, including cutlery, cookware, glassware, crystal, silverware, utensils, kitchenware and consumer specialties not classified elsewhere."
+"25202010";"Consumer Discretionary";"Consumer Durables & Apparel";"Leisure Products";"Leisure Products";"Manufacturers of leisure products and equipment includingsports equipment, bicycles and toys."
+"25203010";"Consumer Discretionary";"Consumer Durables & Apparel";"Textiles, Apparel & Luxury Goods";"Apparel, Accessories & Luxury Goods";"Manufacturers of apparel, accessories & luxury goods. Includes companies primarily producing designer handbags, wallets, luggage, jewelry and watches. Excludes shoes classified in the Footwear Sub-Industry."
+"25203020";"Consumer Discretionary";"Consumer Durables & Apparel";"Textiles, Apparel & Luxury Goods";"Footwear";"Manufacturers of footwear. Includes sport and leather shoes."
+"25203030";"Consumer Discretionary";"Consumer Durables & Apparel";"Textiles, Apparel & Luxury Goods";"Textiles";"Manufacturers of textile and related products not classified in the Apparel, Accessories & Luxury Goods, Footwear or Home Furnishings Sub-Industries."
+"25301010";"Consumer Discretionary";"Consumer Services";"Hotels, Restaurants & Leisure";"Casinos & Gaming";"Owners and operators of casinos and gaming facilities. Includes companies providing lottery and betting services."
+"25301020";"Consumer Discretionary";"Consumer Services";"Hotels, Restaurants & Leisure";"Hotels, Resorts & Cruise Lines";"Owners and operators of hotels, resorts and cruise-ships. Includes travel agencies, tour operators and related services not classified elsewhere . Excludes casino-hotels classified in the Casinos & Gaming Sub-Industry."
+"25301030";"Consumer Discretionary";"Consumer Services";"Hotels, Restaurants & Leisure";"Leisure Facilities";"Owners and operators of leisure facilities, including sport and fitness centers, stadiums, golf courses and amusement parks not classified in the Movies & Entertainment Sub-Industry."
+"25301040";"Consumer Discretionary";"Consumer Services";"Hotels, Restaurants & Leisure";"Restaurants";"Owners and operators of restaurants, bars, pubs, fast-food or take-out facilities. Includes companies that provide food catering services."
+"25302010";"Consumer Discretionary";"Consumer Services";"Diversified Consumer Services";"Education Services";"Companies providing educational services, either on-line or through conventional teaching methods. Includes, private universities, correspondence teaching, providers of educational seminars, educational materials and technical education. Excludes companies providing employee education programs classified in the Human Resources & Employment Services Sub-Industry"
+"25302020";"Consumer Discretionary";"Consumer Services";"Diversified Consumer Services";"Specialized Consumer Services";"Companies providing consumer services not classified elsewhere.  Includes residential services, home security, legal services, personal services, renovation & interior design services, consumer auctions and wedding & funeral services."
+"25501010";"Consumer Discretionary";"Retailing";"Distributors";"Distributors";"Distributors and wholesalers of general merchandise not classified elsewhere. Includes vehicle distributors."
+"25502020";"Consumer Discretionary";"Retailing";"Internet & Direct Marketing Retail";"Internet & Direct Marketing Retail";"Companies  providing  retail  services  primarily  on  the Internet, through mail order, and TV home shopping retailers. Also includes companies providing online marketplaces for consumer products and services."
+"25503010";"Consumer Discretionary";"Retailing";"Multiline Retail";"Department Stores";"Owners and operators of department stores."
+"25503020";"Consumer Discretionary";"Retailing";"Multiline Retail";"General Merchandise Stores";"Owners and operators of stores offering diversified general merchandise. Excludes hypermarkets and large-scale super centers classified in the Hypermarkets & Super Centers Sub-Industry."
+"25504010";"Consumer Discretionary";"Retailing";"Specialty Retail";"Apparel Retail";"Retailers specialized mainly in apparel and accessories."
+"25504020";"Consumer Discretionary";"Retailing";"Specialty Retail";"Computer &Electronics Retail";"Owners and operators of consumer electronics, computers, video and related products retail stores."
+"25504030";"Consumer Discretionary";"Retailing";"Specialty Retail";"Home Improvement Retail";"Owners and operators of home and garden improvement retail stores. Includes stores offering building materials and supplies."
+"25504040";"Consumer Discretionary";"Retailing";"Specialty Retail";"Specialty Stores";"Owners and operators of specialty retail stores not classified elsewhere. Includes jewelry stores, toy stores, office supply stores, health & vision care stores, and book & entertainment stores."
+"25504050";"Consumer Discretionary";"Retailing";"Specialty Retail";"Automotive Retail";"Ownersand operators of stores specializing in automotive retail.  Includes auto dealers, gas stations, and retailers of auto accessories, motorcycles & parts, automotive glass, and automotive equipment & parts."
+"25504060";"Consumer Discretionary";"Retailing";"Specialty Retail";"Homefurnishing Retail";"Owners and operators of furniture and home furnishings retail stores.  Includes residential furniture, homefurnishings, housewares, and interior design.  Excludes home and garden improvement stores, classified in the Home Improvement Retail Sub-Industry."
+"30101010";"Consumer Staples";"Food & Staples Retailing";"Food & Staples Retailing";"Drug Retail";"Owners and operators of primarily drug retail stores and pharmacies."
+"30101020";"Consumer Staples";"Food & Staples Retailing";"Food & Staples Retailing";"Food Distributors";"Distributors of food products to other companies and not directly to the consumer."
+"30101030";"Consumer Staples";"Food & Staples Retailing";"Food & Staples Retailing";"Food Retail";"Owners and operators of primarily food retail stores."
+"30101040";"Consumer Staples";"Food & Staples Retailing";"Food & Staples Retailing";"Hypermarkets & Super Centers";"Owners and operators of hypermarkets and super centers selling food and a wide-range of consumer staple products.  Excludes Food and Drug Retailers classified in the Food Retail and Drug Retail Sub-Industries, respectively."
+"30201010";"Consumer Staples";"Food, Beverage & Tobacco";"Beverages";"Brewers";"Producers of beer and malt liquors. Includes breweries not classified in the Restaurants Sub-Industry."
+"30201020";"Consumer Staples";"Food, Beverage & Tobacco";"Beverages";"Distillers & Vintners";"Distillers, vintners and producers of alcoholic beverages not classified in the Brewers Sub-Industry."
+"30201030";"Consumer Staples";"Food, Beverage & Tobacco";"Beverages";"Soft Drinks";"Producers of non-alcoholic beverages including mineral waters. Excludes producers of milk classified in the Packaged Foods Sub-Industry."
+"30202010";"Consumer Staples";"Food, Beverage & Tobacco";"Food Products";"Agricultural Products";"Producers of agricultural products. Includes crop growers, owners of plantations and companies that produce and process foods but do not package and market them. Excludescompanies classified in the Forest Products Sub-Industry and those that package and market the food products classified in the Packaged Foods Sub-Industry."
+"30202030";"Consumer Staples";"Food, Beverage & Tobacco";"Food Products";"Packaged Foods & Meats";"Producers of packaged foods including dairy products, fruit juices, meats, poultry, fish and pet foods."
+"30203010";"Consumer Staples";"Food, Beverage & Tobacco";"Tobacco";"Tobacco";"Manufacturers of cigarettes and other tobacco products."
+"30301010";"Consumer Staples";"Household & Personal Products";"Household Products";"Household Products";"Producers of non-durable household products, including detergents, soaps, diapers and other tissue and household paper products not classified in the Paper Products Sub-Industry."
+"30302010";"Consumer Staples";"Household & Personal Products";"Personal Products";"Personal Products";"Manufacturers of personal and beauty care products, including cosmetics and perfumes."
+"35101010";"Health Care";"Health Care Equipment & Services";"Health Care Equipment & Supplies";"Health Care Equipment";"Manufacturers of health care equipment and devices. Includes medical instruments, drug delivery systems, cardiovascular & orthopedic devices, and diagnostic equipment."
+"35101020";"Health Care";"Health Care Equipment & Services";"Health Care Equipment & Supplies";"Health Care Supplies";"Manufacturers of health care supplies and medical products not classified elsewhere. Includes eye care products, hospital supplies, and safety needle & syringe devices."
+"35102010";"Health Care";"Health Care Equipment & Services";"Health Care Providers & Services";"Health Care Distributors";"Distributors and wholesalers of health care products not classified elsewhere. "
+"35102015";"Health Care";"Health Care Equipment & Services";"Health Care Providers & Services";"Health Care  Services";"Providers of patient health care services not classified elsewhere. Includes dialysis centers, lab testing services, and pharmacy management services. Also includes companies providing business support services to health care providers, such as clerical support services, collection agency services, staffing services and outsourced sales & marketing services"
+"35102020";"Health Care";"Health Care Equipment & Services";"Health Care Providers & Services";"Health Care Facilities";"Owners and operatorsof health care facilities, including hospitals, nursing homes, rehabilitation centers and animal hospitals."
+"35102030";"Health Care";"Health Care Equipment & Services";"Health Care Providers & Services";"Managed Health Care";"Owners and operators of Health Maintenance Organizations (HMOs) and other managed plans."
+"35103010";"Health Care";"Health Care Equipment & Services";"Health Care Technology";"Health Care Technology";"Companies providing information technology services primarily to health care providers.  Includes companies providing application, systems and/or data processing software, internet-based tools, and IT consulting services to doctors, hospitals or businesses operating primarily in the Health Care Sector"
+"35201010";"Health Care";"Pharmaceuticals, Biotechnology & Life Sciences";"Biotechnology";"Biotechnology";"Companies primarily engaged in the research, development, manufacturing and/or marketing of products based on genetic analysis and genetic engineering.  Includes companies specializing in protein-based therapeutics to treat human diseases. Excludes companies manufacturing products using biotechnology but without a health care application."
+"35202010";"Health Care";"Pharmaceuticals, Biotechnology & Life Sciences";"Pharmaceuticals";"Pharmaceuticals";"Companies engaged in the research, development or production of pharmaceuticals. Includes veterinary drugs."
+"35203010";"Health Care";"Pharmaceuticals, Biotechnology & Life Sciences";"Life Sciences Tools & Services";"Life Sciences Tools & Services";"Companies enabling the drug discovery, development and production continuum by providing analytical tools, instruments, consumables & supplies, clinical trial services and contract research services.  Includes firms primarily servicing the pharmaceutical and biotechnology industries."
+"40101010";"Financials";"Banks";"Banks";"Diversified Banks";"Large, geographically diverse banks with a national footprint whose revenues are derived primarily from conventional banking operations, have significant business activity in retail banking and small and medium corporate lending, and provide a diverse range of financial services.  Excludes banks classified in the Regional Banks and Thrifts & Mortgage Finance Sub-Industries. Also excludes investment banks classified in the Investment Banking & Brokerage Sub-Industry."
+"40101015";"Financials";"Banks";"Banks";"Regional Banks";"Commercial banks whose businesses are derived primarily from conventional banking operations and have significant business activity in retail banking and small and medium corporate lending. Regional banks tend to operate in limited geographic regions. Excludes companies classified in the Diversified Banks and Thrifts & Mortgage Banks sub-industries. Also excludes investment banks classified in the Investment Banking & Brokerage Sub-Industry."
+"40102010";"Financials";"Banks";"Thrifts & Mortgage Finance";"Thrifts & Mortgage Finance";"Financial institutions providing mortgage and mortgage related services.  These include financial institutions whose assets are primarily mortgage related, savings & loans, mortgage lending institutions, building societies and companies providing insurance to mortgage banks."
+"40201020";"Financials";"Diversified Financials";"Diversified Financial Services";"Other Diversified Financial Services";"Providers of a diverse range of financial services and/or with some interest in a wide range of financial services including banking, insurance and capital markets, but with no dominant business line. Excludes companies classified in the Regional Banks and Diversified Banks Sub-Industries."
+"40201030";"Financials";"Diversified Financials";"Diversified Financial Services";"Multi-Sector Holdings";"A company with significantly diversified holdings across three or more sectors, none of which contributes a majority of profit and/or sales. Stakes held are predominantly of a non-controlling nature.  Includes diversified financial companies where stakes held are of a controlling nature. Excludes other diversified companies classified in the Industrials Conglomerates Sub-Industry."
+"40201040";"Financials";"Diversified Financials";"Diversified Financial Services";"Specialized Finance";"Providers  of  specialized  financial  services  not  classified  elsewhere. Companies  in  this  sub-industry  derive  a  majority  of  revenue  from  one  specialized  line  of  business. Includes,  but  not  limited  to,  commercial  financing  companies,  central  banks,  leasing  institutions, factoring services, and specialty boutiques. Excludes companies classified in the Financial Exchanges & Data sub-industry."
+"40202010";"Financials";"Diversified Financials";"Consumer Finance";"Consumer Finance";"Providers of consumer finance services, including personal credit, credit cards, lease financing, travel-related money services and pawn shops.  Excludes mortgage lenders classified in the Thrifts & Mortgage Finance Sub-Industry."
+"40203010";"Financials";"Diversified Financials";"Capital Markets";"Asset Management & Custody Banks";"Financial institutions primarily engaged in investment management and/or related custody and securities fee-based services. Includes companies operating mutual funds, closed-end funds and unit investment trusts.  Excludes banks and other financial institutions primarily involved in commercial lending, investment banking, brokerage and other specialized financial activities. "
+"40203020";"Financials";"Diversified Financials";"Capital Markets";"Investment Banking & Brokerage";"Financial institutions primarily engaged in investment banking & brokerage services, including equity and debt underwriting, mergers and acquisitions, securities lending and advisory services. Excludes banks and other financial institutions primarily involved in commercial lending, asset management and specialized financial activities. "
+"40203030";"Financials";"Diversified Financials";"Capital Markets";"Diversified Capital Markets";"Financial institutions primarily engaged in diversified capital markets activities, including a significant presence in at least two of the following area: large/major corporate lending, investment banking, brokerage and asset management. Excludes less diversified companies classified in the Asset Management& Custody Banks or Investment Banking & Brokerage sub-industries.  Also excludes companies classified in the Banks or Insurance industry groups or the Consumer Finance Sub-Industry. "
+"40203040";"Financials";"Diversified Financials";"Capital Markets";"Financial Exchanges & Data";"Financial  exchanges  for  securities,  commodities,  derivatives and other financial instruments, and providers of financial decision support tools and products  including ratings agencies"
+"40204010";"Financials";"Diversified Financials";"Mortgage Real Estate Investment Trusts (REITs)";"Mortgage REITs";"Companies or Trusts that service, originate, purchase and/or securitize residential and/or commercial mortgage loans.  Includes trusts that invest in mortgage-backed securities and other mortgage related assets."
+"40301010";"Financials";"Insurance";"Insurance";"Insurance Brokers";"Insurance and reinsurance brokerage firms."
+"40301020";"Financials";"Insurance";"Insurance";"Life & Health Insurance";"Companies providing primarily life, disability, indemnity or supplemental health insurance. Excludes managed care companies classified in the Managed Health Care Sub-Industry."
+"40301030";"Financials";"Insurance";"Insurance";"Multi-line Insurance";"Insurance companies with diversified interests in life, health and property and casualty insurance."
+"40301040";"Financials";"Insurance";"Insurance";"Property & Casualty Insurance";"Companies providing primarily property and casualty insurance."
+"40301050";"Financials";"Insurance";"Insurance";"Reinsurance";"Companies providing primarily reinsurance."
+"45102010";"Information Technology";"Software & Services";"IT Services";"IT Consulting & Other Services";"Providers of information technology and systems integration services not classified in the Data Processing & Outsourced Services Sub-Industry.  Includes information technology consulting and information management services."
+"45102020";"Information Technology";"Software & Services";"IT Services";"Data Processing & Outsourced Services";"Providers of commercial electronic data processing and/or business process outsourcing services.  Includes companies that provide services for back-office automation."
+"45102030";"Information Technology";"Software & Services";"IT Services";"Internet Services & Infrastructure";"Companies providing services and infrastructure for the internet industry including data centers and cloud networking and storage infrastructure. Also includes companies providing web hosting services. Excludes companies classified in the Software Industry."
+"45103010";"Information Technology";"Software & Services";"Software";"Application Software";"Companies engaged in developing and producing software designed for specialized applications for the business or consumer market. Includes enterprise and technical software, as well as cloud-based software. Excludes companies classified in the Interactive Home Entertainment Sub-Industry. Also excludes companies producing systems or database management software classified in the Systems Software Sub-Industry."
+"45103020";"Information Technology";"Software & Services";"Software";"Systems Software";"Companies engaged in developing and producing systems and database management software."
+"45201020";"Information Technology";"Technology Hardware & Equipment";"Communications Equipment";"Communications Equipment";"Manufacturers of communication equipment and products, including LANs, WANs, routers, telephones, switchboards and exchanges. Excludes cellular phone manufacturers classified in the Technology Hardware,Storage & Peripherals Sub-Industry."
+"45202030";"Information Technology";"Technology Hardware & Equipment";"Technology Hardware, Storage & Peripherals";"Technology Hardware, Storage & Peripherals";"Manufacturers of cellular phones, personal computers, servers, electronic computer components and peripherals. Includes data storage components, motherboards, audio and video cards, monitors, keyboards, printers, and other peripherals. Excludes semiconductors classified in the Semiconductors Sub-Industry."
+"45203010";"Information Technology";"Technology Hardware & Equipment";"Electronic Equipment, Instruments & Components";"Electronic Equipment & Instruments ";"Manufacturers of electronic equipment and instruments including analytical, electronic test and measurement instruments, scanner/barcode products, lasers, display screens, point-of-sales machines, and security system equipment."
+"45203015";"Information Technology";"Technology Hardware & Equipment";"Electronic Equipment, Instruments & Components";"Electronic Components";"Manufacturers of electronic components. Includes electronic components, connection devices, electron tubes, electronic capacitors and resistors, electronic coil, printed circuit board, transformer and other inductors, signal processing technology/components."
+"45203020";"Information Technology";"Technology Hardware & Equipment";"Electronic Equipment, Instruments & Components";"Electronic Manufacturing Services";"Producers of electronic equipment mainly for the OEM (Original Equipment Manufacturers) markets."
+"45203030";"Information Technology";"Technology Hardware & Equipment";"Electronic Equipment, Instruments & Components";"Technology Distributors";"Distributors of technology hardware and equipment. Includes distributors of communications equipment, computers & peripherals, semiconductors, and electronic equipment and components."
+"45301010";"Information Technology";"Semiconductors & Semiconductor Equipment";"Semiconductors & Semiconductor Equipment";"Semiconductor Equipment ";"Manufacturers of semiconductor equipment, including manufacturers of the raw material and equipment used in the solar power industry."
+"45301020";"Information Technology";"Semiconductors & Semiconductor Equipment";"Semiconductors & Semiconductor Equipment";"Semiconductors";"Manufacturers of semiconductors and related products, including manufacturers of solar modules and cells."
+"50101010";"Communication Services";"Telecommunication Services";"Diversified Telecommunication Services";"Alternative Carriers";"Providers of communications and high-density data transmission services primarily through a high bandwidth/fiber-optic cable network."
+"50101020";"Communication Services";"Telecommunication Services";"Diversified Telecommunication Services";"Integrated Telecommunication Services";"Operators of primarily fixed-line telecommunications networks and companies providing both wireless and fixed-line telecommunicationsservices not classified elsewhere. Also includes internet service providers offering internet access to end users."
+"50102010";"Communication Services";"Telecommunication Services";"Wireless Telecommunication Services";"Wireless Telecommunication Services";"Providers of primarily cellular or wireless telecommunication services."
+"50201010";"Communication Services";"Media & Entertainment";"Media";"Advertising";"Companies providing advertising, marketing or public relations services."
+"50201020";"Communication Services";"Media & Entertainment";"Media";"Broadcasting";"Owners and operators of television or radio broadcasting systems, including programming. Includes radio and television broadcasting, radio networks, and radio stations."
+"50201030";"Communication Services";"Media & Entertainment";"Media";"Cable &Satellite";"Providers of cable or satellite television services. Includes cable networks and program distribution."
+"50201040";"Communication Services";"Media & Entertainment";"Media";"Publishing";"Publishers of newspapers, magazines and books in print or electronic formats."
+"50202010";"Communication Services";"Media & Entertainment";"Entertainment";"Movies & Entertainment";"Companies that engage in producing and selling entertainment products and services, including companies engaged in the production, distribution and screening of movies and television shows, producers and distributors of music, entertainment theaters and sports teams. Also includes companies offering and/or producing entertainment content streamed online."
+"50202020";"Communication Services";"Media & Entertainment";"Entertainment";"Interactive Home Entertainment";"Producers of interactive gaming products, including mobile gaming applications. Also includes educational software used primarily in the home. Excludes online gambling companies classified in the Casinos & Gaming Sub-Industry."
+"50203010";"Communication Services";"Media & Entertainment";"Interactive Media & Services";"Interactive Media & Services";"Companies engaging in content and information creation or distribution through proprietary platforms, where revenues are derived primarily through pay-per-click advertisements. Includes search engines, social media and networking platforms, online classifieds, and online review companies. Excludes companies operating online marketplaces classified in Internet & Direct Marketing Retail. "
+"55101010";"Utilities";"Utilities";"Electric Utilities";"Electric Utilities";"Companies that produce or distribute electricity. Includes both nuclear and non-nuclear facilities."
+"55102010";"Utilities";"Utilities";"Gas Utilities";"Gas Utilities";"Companies whose main charter is to distribute and transmit natural and manufactured gas. Excludes companies primarily involved in gas exploration or production classified in the Oil & Gas Exploration & Production Sub-Industry. Also excludes companies engaged in thestorage and/or transportation of oil, gas, and/or refined products classified in the Oil & Gas Storage & Transportation Sub-Industry."
+"55103010";"Utilities";"Utilities";"Multi-Utilities";"Multi-Utilities";"Utility companies with significantly diversified activities in addition to core Electric Utility, Gas Utility and/or Water Utility operations."
+"55104010";"Utilities";"Utilities";"Water Utilities";"Water Utilities";"Companies that purchase and redistribute water to the end-consumer. Includes large-scale water treatment systems."
+"55105010";"Utilities";"Utilities";"Independent Power and Renewable Electricity Producers";"Independent Power Producers & Energy Traders";"Companies that operate as Independent Power Producers (IPPs), Gas & Power Marketing & Trading Specialists and/or Integrated Energy Merchants. Excludes producers of electricity using renewable sources, such as solar power, hydropower, and wind power. Also excludes electric transmission companies and utility distribution companies classified in the Electric Utilities Sub-Industry."
+"55105020";"Utilities";"Utilities";"Independent Power and Renewable Electricity Producers";"Renewable Electricity ";"Companies that engage in the generation and distribution of electricity using renewable sources, including, but not limited to, companies that produce electricity using biomass, geothermal energy, solar energy, hydropower, and wind power. Excludes companies manufacturing capital equipment used to generate electricity using renewable sources, such as manufacturers of solar power systems, installers of photovoltaic cells,  and companies involved in the provision of technology, components, and services mainly to this market. "
+"60101010";"Real Estate";"Real Estate";"Diversified REITs";"Diversified REITs";"A company or Trust with significantly diversified operations across two or more property types."
+"60101020";"Real Estate";"Real Estate";"Diversified REITs";"Industrial REITs";"Companies or Trusts engaged in the acquisition, development, ownership, leasing, management and operation of industrial properties. Includescompanies operating industrial warehouses and distribution properties."
+"60101030";"Real Estate";"Real Estate";"Diversified REITs";"Hotel & Resort REITs ";"Companies or Trusts engaged in the acquisition, development, ownership, leasing, management and operation of hotel and resort properties. "
+"60101040";"Real Estate";"Real Estate";"Diversified REITs";"Office REITs ";"Companies or Trusts engaged in the acquisition, development, ownership, leasing, management and operation of office properties."
+"60101050";"Real Estate";"Real Estate";"Diversified REITs";"Health Care REITs ";"Companies or Trusts engaged in the acquisition, development, ownership, leasing, management and operation of properties serving the health care industry, including hospitals, nursing homes, and assisted living properties."
+"60101060";"Real Estate";"Real Estate";"Diversified REITs";"Residential REITs";"Companies or Trusts engaged in the acquisition, development, ownership, leasing, management and operation of residential properties including multifamily homes, apartments, manufactured homes and student housing properties"
+"60101070";"Real Estate";"Real Estate";"Diversified REITs";"Retail REITs";"Companies or Trusts engaged in the acquisition, development, ownership, leasing, management and operation of shopping malls, outlet malls, neighborhood and community shopping centers."
+"60101080";"Real Estate";"Real Estate";"Diversified REITs";"Specialized REITs ";"Companies or Trusts engaged in the acquisition, development, ownership, leasing, management and operation of properties not classified elsewhere. Includes trusts that operate and invest in storage properties. It also includes REITs that do not generate a majority of their revenues and income from real estate rental and leasing operations."
+"60102010";"Real Estate";"Real Estate";"Real Estate Management & Development";"Diversified Real Estate Activities ";"Companies engaged in a diverse spectrum of real estate activities including real estate development & sales, real estate management, or real estate services, but with no dominant business line."
+"60102020";"Real Estate";"Real Estate";"Real Estate Management & Development";"Real Estate Operating Companies";"Companies engaged in operating real estate properties for the purpose of leasing & management."
+"60102030";"Real Estate";"Real Estate";"Real Estate Management & Development";"Real Estate Development ";"Companies that develop real estate and sell the properties after development. Excludes companies classified in the Homebuilding Sub-Industry."
+"60102040";"Real Estate";"Real Estate";"Real Estate Management & Development";"Real Estate Services ";"Real estate service providers such as real estate agents, brokers & real estate appraisers."
+"60102510";"Real Estate";"Real Estate";"Industrial REITs";"Industrial REITs";"null"
+"60103010";"Real Estate";"Real Estate";"Hotel & Resort REITs";"Hotel & Resort REITs";"null"
+"60104010";"Real Estate";"Real Estate";"Office REITs";"Office REITs";"null"
+"60105010";"Real Estate";"Real Estate";"Health Care REITs";"Health Care REITs";"null"
+"60106010";"Real Estate";"Real Estate";"Residential REITs";"Multi-Family Residential REITs";"null"
+"60106020";"Real Estate";"Real Estate";"Residential REITs";"Single-Family Residential REITs";"null"
+"60107010";"Real Estate";"Real Estate";"Retail REITs";"Retail REITs";"null"
+"60108010";"Real Estate";"Real Estate";"Specialized REITs";"Other Specialized REITs";"null"
+"60108020";"Real Estate";"Real Estate";"Specialized REITs";"Self-Storage REITs";"null"
+"60108030";"Real Estate";"Real Estate";"Specialized REITs";"Telecom Tower REITs";"null"
+"60108040";"Real Estate";"Real Estate";"Specialized REITs";"Timber REITs";"null"
+"60108050";"Real Estate";"Real Estate";"Specialized REITs";"Data Center REITs";"null"
+"60201010";"Real Estate";"Real Estate Management & Development";"Real Estate Management & Development";"Diversified Real Estate Activities";"null"
+"60201020";"Real Estate";"Real Estate Management & Development";"Real Estate Management & Development";"Real Estate Operating Companies";"null"
+"60201030";"Real Estate";"Real Estate Management & Development";"Real Estate Management & Development";"Real Estate Development";"null"
+"60201040";"Real Estate";"Real Estate Management & Development";"Real Estate Management & Development";"Real Estate Services";"null"
+]]>
+	</initial-data>
+</table>
+
+<table name="countries" layers="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="760" y="1460"/>
+	<column name="id" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="name_prefix">
+		<type name="text" length="0"/>
+	</column>
+	<column name="alpha2_code">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[ISO-3166 Alpha 2]]> </comment>
+	</column>
+	<column name="alpha3_code" not-null="true">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[ISO-3166 Alpha 3]]> </comment>
+	</column>
+	<column name="numeric_code">
+		<type name="text" length="0"/>
+		<comment> <![CDATA[ISO-3166 Numeric]]> </comment>
+	</column>
+	<constraint name="countries_id_pk" type="pk-constr" table="public.countries">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="countries_alpha3_code_uq" type="uq-constr" table="public.countries">
+		<columns names="alpha3_code" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="countries_numeric_code_uq" type="uq-constr" table="public.countries">
+		<columns names="numeric_code" ref-type="src-columns"/>
+	</constraint>
+	<initial-data>
+<![CDATA["id";"name";"name_prefix";"alpha2_code";"alpha3_code";"numeric_code"
+"1";"Afghanistan";"";"AF";"AFG";"004"
+"2";"Åland Islands";"";"AX";"ALA";"248"
+"3";"Albania";"";"AL";"ALB";"008"
+"4";"Algeria";"";"DZ";"DZA";"012"
+"5";"American Samoa";"";"AS";"ASM";"016"
+"6";"Andorra";"";"AD";"AND";"020"
+"7";"Angola";"";"AO";"AGO";"024"
+"8";"Anguilla";"";"AI";"AIA";"660"
+"9";"Antarctica";"";"AQ";"ATA";"010"
+"10";"Antigua and Barbuda";"";"AG";"ATG";"028"
+"11";"Argentina";"";"AR";"ARG";"032"
+"12";"Armenia";"";"AM";"ARM";"051"
+"13";"Aruba";"";"AW";"ABW";"533"
+"14";"Australia";"";"AU";"AUS";"036"
+"15";"Austria";"";"AT";"AUT";"040"
+"16";"Azerbaijan";"";"AZ";"AZE";"031"
+"17";"Bahamas";"";"BS";"BHS";"044"
+"18";"Bahrain";"";"BH";"BHR";"048"
+"19";"Bangladesh";"";"BD";"BGD";"050"
+"20";"Barbados";"";"BB";"BRB";"052"
+"21";"Belarus";"";"BY";"BLR";"112"
+"22";"Belgium";"";"BE";"BEL";"056"
+"23";"Belize";"";"BZ";"BLZ";"084"
+"24";"Benin";"";"BJ";"BEN";"204"
+"25";"Bermuda";"";"BM";"BMU";"060"
+"26";"Bhutan";"";"BT";"BTN";"064"
+"27";"Bolivia";"Plurinational State of";"BO";"BOL";"068"
+"28";"Bonaire";"Sint Eustatius and Saba";"BQ";"BES";"535"
+"29";"Bosnia and Herzegovina";"";"BA";"BIH";"070"
+"30";"Botswana";"";"BW";"BWA";"072"
+"31";"Bouvet Island";"";"BV";"BVT";"074"
+"32";"Brazil";"";"BR";"BRA";"076"
+"33";"British Indian Ocean Territory";"";"IO";"IOT";"086"
+"34";"Brunei Darussalam";"";"BN";"BRN";"096"
+"35";"Bulgaria";"";"BG";"BGR";"100"
+"36";"Burkina Faso";"";"BF";"BFA";"854"
+"37";"Burundi";"";"BI";"BDI";"108"
+"38";"Cabo Verde";"";"CV";"CPV";"132"
+"39";"Cambodia";"";"KH";"KHM";"116"
+"40";"Cameroon";"";"CM";"CMR";"120"
+"41";"Canada";"";"CA";"CAN";"124"
+"42";"Cayman Islands";"";"KY";"CYM";"136"
+"43";"Central African Republic";"";"CF";"CAF";"140"
+"44";"Chad";"";"TD";"TCD";"148"
+"45";"Chile";"";"CL";"CHL";"152"
+"46";"China";"";"CN";"CHN";"156"
+"47";"Christmas Island";"";"CX";"CXR";"162"
+"48";"Cocos (Keeling) Islands";"";"CC";"CCK";"166"
+"49";"Colombia";"";"CO";"COL";"170"
+"50";"Comoros";"";"KM";"COM";"174"
+"51";"Congo";"";"CG";"COG";"178"
+"52";"Congo";" Democratic Republic of the";"CD";"COD";"180"
+"53";"Cook Islands";"";"CK";"COK";"184"
+"54";"Costa Rica";"";"CR";"CRI";"188"
+"55";"Côte d'Ivoire";"";"CI";"CIV";"384"
+"56";"Croatia";"";"HR";"HRV";"191"
+"57";"Cuba";"";"CU";"CUB";"192"
+"58";"Curaçao";"";"CW";"CUW";"531"
+"59";"Cyprus";"";"CY";"CYP";"196"
+"60";"Czechia";"";"CZ";"CZE";"203"
+"61";"Denmark";"";"DK";"DNK";"208"
+"62";"Djibouti";"";"DJ";"DJI";"262"
+"63";"Dominica";"";"DM";"DMA";"212"
+"64";"Dominican Republic";"";"DO";"DOM";"214"
+"65";"Ecuador";"";"EC";"ECU";"218"
+"66";"Egypt";"";"EG";"EGY";"818"
+"67";"El Salvador";"";"SV";"SLV";"222"
+"68";"Equatorial Guinea";"";"GQ";"GNQ";"226"
+"69";"Eritrea";"";"ER";"ERI";"232"
+"70";"Estonia";"";"EE";"EST";"233"
+"71";"Eswatini";"";"SZ";"SWZ";"748"
+"72";"Ethiopia";"";"ET";"ETH";"231"
+"73";"Falkland Islands (Malvinas)";"";"FK";"FLK";"238"
+"74";"Faroe Islands";"";"FO";"FRO";"234"
+"75";"Fiji";"";"FJ";"FJI";"242"
+"76";"Finland";"";"FI";"FIN";"246"
+"77";"France";"";"FR";"FRA";"250"
+"78";"French Guiana";"";"GF";"GUF";"254"
+"79";"French Polynesia";"";"PF";"PYF";"258"
+"80";"French Southern Territories";"";"TF";"ATF";"260"
+"81";"Gabon";"";"GA";"GAB";"266"
+"82";"Gambia";"";"GM";"GMB";"270"
+"83";"Georgia";"";"GE";"GEO";"268"
+"84";"Germany";"";"DE";"DEU";"276"
+"85";"Ghana";"";"GH";"GHA";"288"
+"86";"Gibraltar";"";"GI";"GIB";"292"
+"87";"Greece";"";"GR";"GRC";"300"
+"88";"Greenland";"";"GL";"GRL";"304"
+"89";"Grenada";"";"GD";"GRD";"308"
+"90";"Guadeloupe";"";"GP";"GLP";"312"
+"91";"Guam";"";"GU";"GUM";"316"
+"92";"Guatemala";"";"GT";"GTM";"320"
+"93";"Guernsey";"";"GG";"GGY";"831"
+"94";"Guinea";"";"GN";"GIN";"324"
+"95";"Guinea-Bissau";"";"GW";"GNB";"624"
+"96";"Guyana";"";"GY";"GUY";"328"
+"97";"Haiti";"";"HT";"HTI";"332"
+"98";"Heard Island and McDonald Islands";"";"HM";"HMD";"334"
+"99";"Holy See";"";"VA";"VAT";"336"
+"100";"Honduras";"";"HN";"HND";"340"
+"101";"Hong Kong";"";"HK";"HKG";"344"
+"102";"Hungary";"";"HU";"HUN";"348"
+"103";"Iceland";"";"IS";"ISL";"352"
+"104";"India";"";"IN";"IND";"356"
+"105";"Indonesia";"";"ID";"IDN";"360"
+"106";"Iran";"Islamic Republic of";"IR";"IRN";"364"
+"107";"Iraq";"";"IQ";"IRQ";"368"
+"108";"Ireland";"";"IE";"IRL";"372"
+"109";"Isle of Man";"";"IM";"IMN";"833"
+"110";"Israel";"";"IL";"ISR";"376"
+"111";"Italy";"";"IT";"ITA";"380"
+"112";"Jamaica";"";"JM";"JAM";"388"
+"113";"Japan";"";"JP";"JPN";"392"
+"114";"Jersey";"";"JE";"JEY";"832"
+"115";"Jordan";"";"JO";"JOR";"400"
+"116";"Kazakhstan";"";"KZ";"KAZ";"398"
+"117";"Kenya";"";"KE";"KEN";"404"
+"118";"Kiribati";"";"KI";"KIR";"296"
+"119";"Korea";"Democratic People's Republic of";"KP";"PRK";"408"
+"120";"Korea";"Republic of";"KR";"KOR";"410"
+"121";"Kuwait";"";"KW";"KWT";"414"
+"122";"Kyrgyzstan";"";"KG";"KGZ";"417"
+"123";"Lao People's Democratic Republic";"";"LA";"LAO";"418"
+"124";"Latvia";"";"LV";"LVA";"428"
+"125";"Lebanon";"";"LB";"LBN";"422"
+"126";"Lesotho";"";"LS";"LSO";"426"
+"127";"Liberia";"";"LR";"LBR";"430"
+"128";"Libya";"";"LY";"LBY";"434"
+"129";"Liechtenstein";"";"LI";"LIE";"438"
+"130";"Lithuania";"";"LT";"LTU";"440"
+"131";"Luxembourg";"";"LU";"LUX";"442"
+"132";"Macao";"";"MO";"MAC";"446"
+"133";"Madagascar";"";"MG";"MDG";"450"
+"134";"Malawi";"";"MW";"MWI";"454"
+"135";"Malaysia";"";"MY";"MYS";"458"
+"136";"Maldives";"";"MV";"MDV";"462"
+"137";"Mali";"";"ML";"MLI";"466"
+"138";"Malta";"";"MT";"MLT";"470"
+"139";"Marshall Islands";"";"MH";"MHL";"584"
+"140";"Martinique";"";"MQ";"MTQ";"474"
+"141";"Mauritania";"";"MR";"MRT";"478"
+"142";"Mauritius";"";"MU";"MUS";"480"
+"143";"Mayotte";"";"YT";"MYT";"175"
+"144";"Mexico";"";"MX";"MEX";"484"
+"145";"Micronesia";"Federated States of";"FM";"FSM";"583"
+"146";"Moldova";"Republic of";"MD";"MDA";"498"
+"147";"Monaco";"";"MC";"MCO";"492"
+"148";"Mongolia";"";"MN";"MNG";"496"
+"149";"Montenegro";"";"ME";"MNE";"499"
+"150";"Montserrat";"";"MS";"MSR";"500"
+"151";"Morocco";"";"MA";"MAR";"504"
+"152";"Mozambique";"";"MZ";"MOZ";"508"
+"153";"Myanmar";"";"MM";"MMR";"104"
+"154";"Namibia";"";"NA";"NAM";"516"
+"155";"Nauru";"";"NR";"NRU";"520"
+"156";"Nepal";"";"NP";"NPL";"524"
+"157";"Netherlands";"Kingdom of the";"NL";"NLD";"528"
+"158";"New Caledonia";"";"NC";"NCL";"540"
+"159";"New Zealand";"";"NZ";"NZL";"554"
+"160";"Nicaragua";"";"NI";"NIC";"558"
+"161";"Niger";"";"NE";"NER";"562"
+"162";"Nigeria";"";"NG";"NGA";"566"
+"163";"Niue";"";"NU";"NIU";"570"
+"164";"Norfolk Island";"";"NF";"NFK";"574"
+"165";"North Macedonia";"";"MK";"MKD";"807"
+"166";"Northern Mariana Islands";"";"MP";"MNP";"580"
+"167";"Norway";"";"NO";"NOR";"578"
+"168";"Oman";"";"OM";"OMN";"512"
+"169";"Pakistan";"";"PK";"PAK";"586"
+"170";"Palau";"";"PW";"PLW";"585"
+"171";"Palestine";"State of";"PS";"PSE";"275"
+"172";"Panama";"";"PA";"PAN";"591"
+"173";"Papua New Guinea";"";"PG";"PNG";"598"
+"174";"Paraguay";"";"PY";"PRY";"600"
+"175";"Peru";"";"PE";"PER";"604"
+"176";"Philippines";"";"PH";"PHL";"608"
+"177";"Pitcairn";"";"PN";"PCN";"612"
+"178";"Poland";"";"PL";"POL";"616"
+"179";"Portugal";"";"PT";"PRT";"620"
+"180";"Puerto Rico";"";"PR";"PRI";"630"
+"181";"Qatar";"";"QA";"QAT";"634"
+"182";"Réunion";"";"RE";"REU";"638"
+"183";"Romania";"";"RO";"ROU";"642"
+"184";"Russian Federation";"";"RU";"RUS";"643"
+"185";"Rwanda";"";"RW";"RWA";"646"
+"186";"Saint Barthélemy";"";"BL";"BLM";"652"
+"187";"Saint Helena";"Ascension and Tristan da Cunha";"SH";"SHN";"654"
+"188";"Saint Kitts and Nevis";"";"KN";"KNA";"659"
+"189";"Saint Lucia";"";"LC";"LCA";"662"
+"190";"Saint Martin (French part)";"";"MF";"MAF";"663"
+"191";"Saint Pierre and Miquelon";"";"PM";"SPM";"666"
+"192";"Saint Vincent and the Grenadines";"";"VC";"VCT";"670"
+"193";"Samoa";"";"WS";"WSM";"882"
+"194";"San Marino";"";"SM";"SMR";"674"
+"195";"Sao Tome and Principe";"";"ST";"STP";"678"
+"196";"Saudi Arabia";"";"SA";"SAU";"682"
+"197";"Senegal";"";"SN";"SEN";"686"
+"198";"Serbia";"";"RS";"SRB";"688"
+"199";"Seychelles";"";"SC";"SYC";"690"
+"200";"Sierra Leone";"";"SL";"SLE";"694"
+"201";"Singapore";"";"SG";"SGP";"702"
+"202";"Sint Maarten (Dutch part)";"";"SX";"SXM";"534"
+"203";"Slovakia";"";"SK";"SVK";"703"
+"204";"Slovenia";"";"SI";"SVN";"705"
+"205";"Solomon Islands";"";"SB";"SLB";"090"
+"206";"Somalia";"";"SO";"SOM";"706"
+"207";"South Africa";"";"ZA";"ZAF";"710"
+"208";"South Georgia and the South Sandwich Islands";"";"GS";"SGS";"239"
+"209";"South Sudan";"";"SS";"SSD";"728"
+"210";"Spain";"";"ES";"ESP";"724"
+"211";"Sri Lanka";"";"LK";"LKA";"144"
+"212";"Sudan";"";"SD";"SDN";"729"
+"213";"Suriname";"";"SR";"SUR";"740"
+"214";"Svalbard and Jan Mayen";"";"SJ";"SJM";"744"
+"215";"Sweden";"";"SE";"SWE";"752"
+"216";"Switzerland";"";"CH";"CHE";"756"
+"217";"Syrian Arab Republic";"";"SY";"SYR";"760"
+"218";"Taiwan";"Province of China";"TW";"TWN";"158"
+"219";"Tajikistan";"";"TJ";"TJK";"762"
+"220";"Tanzania";"United Republic of";"TZ";"TZA";"834"
+"221";"Thailand";"";"TH";"THA";"764"
+"222";"Timor-Leste";"";"TL";"TLS";"626"
+"223";"Togo";"";"TG";"TGO";"768"
+"224";"Tokelau";"";"TK";"TKL";"772"
+"225";"Tonga";"";"TO";"TON";"776"
+"226";"Trinidad and Tobago";"";"TT";"TTO";"780"
+"227";"Tunisia";"";"TN";"TUN";"788"
+"228";"Türkiye";"";"TR";"TUR";"792"
+"229";"Turkmenistan";"";"TM";"TKM";"795"
+"230";"Turks and Caicos Islands";"";"TC";"TCA";"796"
+"231";"Tuvalu";"";"TV";"TUV";"798"
+"232";"Uganda";"";"UG";"UGA";"800"
+"233";"Ukraine";"";"UA";"UKR";"804"
+"234";"United Arab Emirates";"";"AE";"ARE";"784"
+"235";"United Kingdom of Great Britain and Northern Ireland";"";"GB";"GBR";"826"
+"236";"United States Minor Outlying Islands";"";"UM";"UMI";"581"
+"237";"United States of America";"";"US";"USA";"840"
+"238";"Uruguay";"";"UY";"URY";"858"
+"239";"Uzbekistan";"";"UZ";"UZB";"860"
+"240";"Vanuatu";"";"VU";"VUT";"548"
+"241";"Venezuela";"Bolivarian Republic of";"VE";"VEN";"862"
+"242";"Viet Nam";"";"VN";"VNM";"704"
+"243";"Virgin Islands (British)";"";"VG";"VGB";"092"
+"244";"Virgin Islands (U.S.)";"";"VI";"VIR";"850"
+"245";"Wallis and Futuna";"";"WF";"WLF";"876"
+"246";"Western Sahara";"";"EH";"ESH";"732"
+"247";"Yemen";"";"YE";"YEM";"887"
+"248";"Zambia";"";"ZM";"ZMB";"894"
+"249";"Zimbabwe";"";"ZW";"ZWE";"716"
+]]>
+	</initial-data>
+</table>
+
+<table name="indicators" layers="0" collapse-mode="2" max-obj-count="2" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment> <![CDATA[Calculated indicators for securities.]]> </comment>
+	<position x="2080" y="540"/>
+	<column name="security" not-null="true">
+		<type name="bigserial" length="0"/>
+	</column>
+	<column name="date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="indicators_security_date_uq" type="uq-constr" table="public.indicators">
+		<columns names="security,date" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="forex_indicators" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<comment> <![CDATA[Calculated indicators for forex pairs.]]> </comment>
+	<position x="80" y="2260"/>
+	<column name="base" not-null="true">
+		<type name="bigserial" length="0"/>
+	</column>
+	<column name="quote" not-null="true">
+		<type name="bigserial" length="0"/>
+	</column>
+	<column name="date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="forex_indicatros_base_quote_date_uq" type="uq-constr" table="public.forex_indicators">
+		<columns names="base,quote,date" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<constraint name="securities_currency_id_currencies" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.currencies" table="public.securities">
+	<columns names="currency" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="securities_exchange_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.exchanges" table="public.securities">
+	<columns names="exchange" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="securities_gics_code" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.gics_codes" table="public.securities">
+	<columns names="gics_code" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="securities_country_fk" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.countries" table="public.securities">
+	<columns names="country" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="quotes_security_id_securities" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.quotes">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="analyst_ratings_security_id_securities" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.analyst_ratings">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="exchanges_country_fk" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.countries" table="public.exchanges">
+	<columns names="country" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="exchanges_currency_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.currencies" table="public.exchanges">
+	<columns names="currency" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="earnings_security_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.earnings">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="options_expirations_security_fk" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.option_expirations">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="option_contracts_security_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.option_contracts">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="iv_Security_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.volatility">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="dividends_security_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.dividends">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="splits_security_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.splits">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="addresses_security_securities_fk" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.addresses">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="addresses_country_countries_fq" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.countries" table="public.addresses">
+	<columns names="country" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="base_currency_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.currencies" table="public.forex_pair_quotes">
+	<columns names="base" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="quote_currency_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.currencies" table="public.forex_pair_quotes">
+	<columns names="quote" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="annual_earnings_security_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.annual_earnings">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="insider_transactions_security_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.insider_transactions">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="etf_data_security_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.etf_data">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="etf_holdings_security_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.etf_holdings">
+	<columns names="etf" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="etf_holdings_linked_security_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.etf_holdings">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="etf_holdings_gics_code_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.gics_codes" table="public.etf_holdings">
+	<columns names="gics_code" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="etf_holdings_country_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.countries" table="public.etf_holdings">
+	<columns names="country" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="balance_sheet_security_fk" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.balance_sheets">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="cash_flow_security_fk" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.cash_flows">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="income_statement_security_fk" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.income_statements">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="officers_security_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.officers">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="exchange_holidays_exchanges_fk" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.exchanges" table="public.exchange_holidays">
+	<columns names="exchange" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="option_contracts_last_security_id" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.option_contracts_last">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="options_expirations_last_security_fk" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.option_expirations_last">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="indicators_security_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.indicators">
+	<columns names="security" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="forex_indicators_base_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.currencies" table="public.forex_indicators">
+	<columns names="base" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="forex_indicators_quote_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.currencies" table="public.forex_indicators">
+	<columns names="quote" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_securities_currencies" type="relfk" layers="0"
+	 src-table="public.securities"
+	 dst-table="public.currencies" reference-fk="securities_currency_id_currencies"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="527.85" y="-31.4702"/>
+	</label>
+</relationship>
+
+<relationship name="rel_securities_exchanges" type="relfk" layers="0"
+	 src-table="public.securities"
+	 dst-table="public.exchanges" reference-fk="securities_exchange_id"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="-576.182" y="-363.693"/>
+	</label>
+</relationship>
+
+<relationship name="rel_securities_gics" type="relfk" layers="0"
+	 src-table="public.securities"
+	 dst-table="public.gics_codes" reference-fk="securities_gics_code"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="68.6592" y="-92.8268"/>
+	</label>
+</relationship>
+
+<relationship name="rel_securities_countries" type="relfk" layers="0"
+	 src-table="public.securities"
+	 dst-table="public.countries" reference-fk="securities_country_fk"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="-314.338" y="-93.5469"/>
+	</label>
+</relationship>
+
+<relationship name="rel_quotes_securities" type="relfk" layers="0"
+	 src-table="public.quotes"
+	 dst-table="public.securities" reference-fk="quotes_security_id_securities"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="-86.2922" y="-256.353"/>
+	</label>
+</relationship>
+
+<relationship name="rel_analyst_ratings_securities" type="relfk" layers="0"
+	 src-table="public.analyst_ratings"
+	 dst-table="public.securities" reference-fk="analyst_ratings_security_id_securities"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="292.068" y="-186.307"/>
+	</label>
+</relationship>
+
+<relationship name="rel_exchanges_countries" type="relfk" layers="0"
+	 src-table="public.exchanges"
+	 dst-table="public.countries" reference-fk="exchanges_country_fk"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="8.5506" y="-15.953"/>
+	</label>
+</relationship>
+
+<relationship name="rel_earnings_securities" type="relfk" layers="0"
+	 src-table="public.earnings"
+	 dst-table="public.securities" reference-fk="earnings_security_id"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="90.5659" y="138.283"/>
+	</label>
+</relationship>
+
+<relationship name="rel_option_expirations_securities" type="relfk" layers="0"
+	 src-table="public.option_expirations"
+	 dst-table="public.securities" reference-fk="options_expirations_security_fk"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="94.806" y="-608.123"/>
+	</label>
+</relationship>
+
+<relationship name="rel_option_contracts_securities" type="relfk" layers="0"
+	 src-table="public.option_contracts"
+	 dst-table="public.securities" reference-fk="option_contracts_security_id"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="387.068" y="-462.801"/>
+	</label>
+</relationship>
+
+<relationship name="rel_volatility_securities" type="relfk" layers="0"
+	 src-table="public.volatility"
+	 dst-table="public.securities" reference-fk="iv_Security_id"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="-40.7325" y="-248.817"/>
+	</label>
+</relationship>
+
+<relationship name="rel_dividends_securities" type="relfk" layers="0"
+	 src-table="public.dividends"
+	 dst-table="public.securities" reference-fk="dividends_security_id"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="324.068" y="-320.84"/>
+	</label>
+</relationship>
+
+<relationship name="rel_splits_securities" type="relfk" layers="0"
+	 src-table="public.splits"
+	 dst-table="public.securities" reference-fk="splits_security_id"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="90.5213" y="-317.953"/>
+	</label>
+</relationship>
+
+<relationship name="rel_addresses_securities" type="relfk" layers="0"
+	 src-table="public.addresses"
+	 dst-table="public.securities" reference-fk="addresses_security_securities_fk"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="-76.1626" y="-565.094"/>
+	</label>
+</relationship>
+
+<relationship name="rel_forex_pair_quotes_currencies_base" type="relfk" layers="0"
+	 src-table="public.forex_pair_quotes"
+	 dst-table="public.currencies" reference-fk="base_currency_id"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="222.88" y="163.247"/>
+	</label>
+</relationship>
+
+<relationship name="rel_forex_pair_quotes_currencies_quote" type="relfk" layers="0"
+	 src-table="public.forex_pair_quotes"
+	 dst-table="public.currencies" reference-fk="quote_currency_id"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="256.36" y="123.247"/>
+	</label>
+</relationship>
+
+<relationship name="rel_annual_earnings_securities" type="relfk" layers="0"
+	 src-table="public.annual_earnings"
+	 dst-table="public.securities" reference-fk="annual_earnings_security_id"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="37.1043" y="-248.422"/>
+	</label>
+</relationship>
+
+<relationship name="rel_insider_transactions_securities" type="relfk" layers="0"
+	 src-table="public.insider_transactions"
+	 dst-table="public.securities" reference-fk="insider_transactions_security_id"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="-245.012" y="-681.277"/>
+	</label>
+</relationship>
+
+<relationship name="rel_etf_data_securities" type="relfk" layers="0"
+	 src-table="public.etf_data"
+	 dst-table="public.securities" reference-fk="etf_data_security_id"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="-177.123" y="153.407"/>
+	</label>
+</relationship>
+
+<relationship name="rel_etf_holdings_securities" type="relfk" layers="0"
+	 src-table="public.etf_holdings"
+	 dst-table="public.securities" reference-fk="etf_holdings_security_id"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="-155.908" y="266.046"/>
+	</label>
+</relationship>
+
+<relationship name="rel_etf_holdings_securities1" type="relfk" layers="0"
+	 src-table="public.etf_holdings"
+	 dst-table="public.securities" reference-fk="etf_holdings_linked_security_id"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-150.908" y="322.815"/>
+	</label>
+</relationship>
+
+<relationship name="rel_balance_sheets_securities" type="relfk" layers="0"
+	 src-table="public.balance_sheets"
+	 dst-table="public.securities" reference-fk="balance_sheet_security_fk"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="1.90354" y="15.447"/>
+	</label>
+</relationship>
+
+<relationship name="rel_cash_flows_securities" type="relfk" layers="0"
+	 src-table="public.cash_flows"
+	 dst-table="public.securities" reference-fk="cash_flow_security_fk"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="-22.9937" y="190.191"/>
+	</label>
+</relationship>
+
+<relationship name="rel_income_statements_securities" type="relfk" layers="0"
+	 src-table="public.income_statements"
+	 dst-table="public.securities" reference-fk="income_statement_security_fk"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="47.5783" y="159.891"/>
+	</label>
+</relationship>
+
+<relationship name="rel_officers_securities" type="relfk" layers="0"
+	 src-table="public.officers"
+	 dst-table="public.securities" reference-fk="officers_security_id"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="236.568" y="45.5712"/>
+	</label>
+</relationship>
+
+<relationship name="rel_exchange_holidays_exchanges" type="relfk" layers="0"
+	 src-table="public.exchange_holidays"
+	 dst-table="public.exchanges" reference-fk="exchange_holidays_exchanges_fk"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="-1.93605" y="-28.153"/>
+	</label>
+</relationship>
+
+<relationship name="rel_option_contracts_last_securities" type="relfk" layers="0"
+	 src-table="public.option_contracts_last"
+	 dst-table="public.securities" reference-fk="option_contracts_last_security_id"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="271.568" y="-34.6845"/>
+	</label>
+</relationship>
+
+<relationship name="rel_option_expirations_last_securities" type="relfk" layers="0"
+	 src-table="public.option_expirations_last"
+	 dst-table="public.securities" reference-fk="options_expirations_last_security_fk"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="267.568" y="129.11"/>
+	</label>
+</relationship>
+
+<relationship name="rel_etf_holdings_gics" type="relfk" layers="0"
+	 src-table="public.etf_holdings"
+	 dst-table="public.gics_codes" reference-fk="etf_holdings_gics_code_fk"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="5.59184" y="-11.7331"/>
+	</label>
+</relationship>
+
+<relationship name="rel_etf_holdings_countries" type="relfk" layers="0"
+	 src-table="public.etf_holdings"
+	 dst-table="public.countries" reference-fk="etf_holdings_country_fk"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-7.21405" y="23.447"/>
+	</label>
+</relationship>
+
+<relationship name="rel_exchanges_currencies" type="relfk" layers="0"
+	 src-table="public.exchanges"
+	 dst-table="public.currencies" reference-fk="exchanges_currency_fk"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_addresses_countries" type="relfk" layers="0"
+	 src-table="public.addresses"
+	 dst-table="public.countries" reference-fk="addresses_country_countries_fq"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="-147.756" y="392.447"/>
+	</label>
+</relationship>
+
+<relationship name="rel_indicators_securities" type="relfk" layers="0"
+	 src-table="public.indicators"
+	 dst-table="public.securities" reference-fk="indicators_security_fk"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="-5.84957" y="-158.553"/>
+	</label>
+</relationship>
+
+<relationship name="rel_forex_indicators_currencies_base" type="relfk" layers="0"
+	 src-table="public.forex_indicators"
+	 dst-table="public.currencies" reference-fk="forex_indicators_base_fk"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="-204.422" y="3.24701"/>
+	</label>
+</relationship>
+
+<relationship name="rel_forex_indicators_currencies_quote" type="relfk" layers="0"
+	 src-table="public.forex_indicators"
+	 dst-table="public.currencies" reference-fk="forex_indicators_quote_fk"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="-166.062" y="-36.753"/>
+	</label>
+</relationship>
+
+</dbmodel>
