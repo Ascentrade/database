@@ -3,7 +3,8 @@
 CAUTION: Do not modify this file unless you know what you are doing.
  Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="1.0.6" use-changelog="false" last-position="0,0" last-zoom="0.3" max-obj-count="42"
+<dbmodel pgmodeler-ver="1.1.2" use-changelog="false" max-obj-count="43"
+	 last-position="530,535" last-zoom="0.7" scene-rect="0,0,4269.44,4081.32"
 	 default-owner="postgres"
 	 layers="Default"
 	 active-layers="0"
@@ -13,15 +14,18 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <database name="database" encoding="UTF8" is-template="false" allow-conns="true">
 </database>
 
-<schema name="public" layers="0" fill-color="#e1e1e1" sql-disabled="true">
+<schema name="public" layers="0" fill-color="#e1e1e1" name-color="#000000" sql-disabled="true">
 </schema>
 
-<table name="securities" layers="0" collapse-mode="2" max-obj-count="74" z-value="0">
+<table name="securities" layers="0" collapse-mode="2" max-obj-count="75" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
 	<position x="2080" y="1060"/>
 	<column name="id" not-null="true">
 		<type name="bigserial" length="0"/>
+	</column>
+	<column name="last_update" not-null="true" default-value="NOW()">
+		<type name="timestamp" length="0"/>
 	</column>
 	<column name="code" not-null="true">
 		<type name="text" length="0"/>
@@ -148,7 +152,7 @@ https://interactivebrokers.github.io/tws-api/basic_contracts.html]]> </comment>
 		<type name="numeric" length="0"/>
 	</column>
 	<column name="peg_ratio">
-		<type name="smallint" length="0"/>
+		<type name="numeric" length="0"/>
 	</column>
 	<column name="wallstreet_target_price">
 		<type name="numeric" length="0"/>
@@ -672,7 +676,7 @@ Used for TradingView exchange name]]> </comment>
 <table name="earnings" layers="0" collapse-mode="2" max-obj-count="9" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="2820" y="2300"/>
+	<position x="2860" y="2320"/>
 	<column name="security" not-null="true">
 		<type name="bigint" length="0"/>
 	</column>
@@ -1133,7 +1137,7 @@ Mostly a XML file to download.]]> </comment>
 <table name="balance_sheets" layers="0" collapse-mode="2" max-obj-count="73" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="1980" y="2740"/>
+	<position x="2100" y="2760"/>
 	<column name="security" not-null="true">
 		<type name="bigint" length="0"/>
 	</column>
@@ -1327,7 +1331,7 @@ yearly = false]]> </comment>
 <table name="cash_flows" layers="0" collapse-mode="2" max-obj-count="37" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="1400" y="2740"/>
+	<position x="1540" y="3040"/>
 	<column name="security" not-null="true">
 		<type name="bigint" length="0"/>
 	</column>
@@ -1431,7 +1435,7 @@ yearly = false]]> </comment>
 <table name="income_statements" layers="0" collapse-mode="2" max-obj-count="42" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="2660" y="2740"/>
+	<position x="2760" y="2760"/>
 	<column name="security" not-null="true">
 		<type name="bigint" length="0"/>
 	</column>
@@ -1563,7 +1567,7 @@ yearly = false]]> </comment>
 </table>
 
 <index name="option_contracts_contract_name_last_trade_date_idx" table="public.option_contracts"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="contract_name"/>
@@ -1574,7 +1578,7 @@ yearly = false]]> </comment>
 </index>
 
 <index name="insider_transactions_security_date_idx" table="public.insider_transactions"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="security"/>
@@ -1585,7 +1589,7 @@ yearly = false]]> </comment>
 </index>
 
 <index name="volatility_security_date_idx" table="public.volatility"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="security"/>
@@ -1596,7 +1600,7 @@ yearly = false]]> </comment>
 </index>
 
 <index name="splits_security_date_idx" table="public.splits"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="security"/>
@@ -1607,7 +1611,7 @@ yearly = false]]> </comment>
 </index>
 
 <index name="options_expirations_security_expiration_last_trade_date_idx" table="public.option_expirations"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="security"/>
@@ -1621,7 +1625,7 @@ yearly = false]]> </comment>
 </index>
 
 <index name="analyst_ratings_security_rating_idx" table="public.analyst_ratings"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="security"/>
@@ -1632,7 +1636,7 @@ yearly = false]]> </comment>
 </index>
 
 <index name="dividends_security_date_idx" table="public.dividends"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="security"/>
@@ -1643,7 +1647,7 @@ yearly = false]]> </comment>
 </index>
 
 <index name="income_statements_quarterly_security_date_idx" table="public.income_statements"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="quarterly"/>
@@ -1657,7 +1661,7 @@ yearly = false]]> </comment>
 </index>
 
 <index name="cash_flows_quarterly_security_date_idx" table="public.cash_flows"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="quarterly"/>
@@ -1671,7 +1675,7 @@ yearly = false]]> </comment>
 </index>
 
 <index name="balance_sheets_quarterly_security_date_idx" table="public.balance_sheets"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="quarterly"/>
@@ -1685,7 +1689,7 @@ yearly = false]]> </comment>
 </index>
 
 <index name="securities_delisted_type_options_idx" table="public.securities"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="is_delisted"/>
@@ -1725,7 +1729,7 @@ yearly = false]]> </comment>
 </table>
 
 <index name="base_quote_date_idx" table="public.forex_pair_quotes"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="base"/>
@@ -1739,7 +1743,7 @@ yearly = false]]> </comment>
 </index>
 
 <index name="securities_lower_code_idx" table="public.securities"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<expression> <![CDATA[lower(code)]]> </expression>
@@ -1747,7 +1751,7 @@ yearly = false]]> </comment>
 </index>
 
 <index name="securities_lower_name_idx" table="public.securities"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<expression> <![CDATA[lower(name)]]> </expression>
@@ -1755,7 +1759,7 @@ yearly = false]]> </comment>
 </index>
 
 <index name="securities_lower_isin_idx" table="public.securities"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<expression> <![CDATA[lower(isin)]]> </expression>
@@ -1837,7 +1841,7 @@ yearly = false]]> </comment>
 </table>
 
 <index name="option_contracts_contract_name_idx" table="public.option_contracts_last"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="contract_name"/>
@@ -1882,7 +1886,7 @@ yearly = false]]> </comment>
 </table>
 
 <index name="options_expirations_last_security_expiration_idx" table="public.option_expirations_last"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="security"/>
@@ -1893,7 +1897,7 @@ yearly = false]]> </comment>
 </index>
 
 <index name="quotes_security_date_idx" table="public.quotes"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="security"/>
@@ -1904,7 +1908,7 @@ yearly = false]]> </comment>
 </index>
 
 <index name="annual_earnings_security_date_idx" table="public.annual_earnings"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="security"/>
@@ -1915,7 +1919,7 @@ yearly = false]]> </comment>
 </index>
 
 <index name="exchanges_code_idx" table="public.exchanges"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="code"/>
@@ -1923,7 +1927,7 @@ yearly = false]]> </comment>
 </index>
 
 <index name="currencies_symbol_idx" table="public.currencies"
-	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
 			<column name="iso_code"/>
@@ -2575,6 +2579,24 @@ https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard]]> </comme
 	</constraint>
 </table>
 
+<table name="outstanding_shares" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1400" y="2720"/>
+	<column name="security" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="date" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="outstanding_shares" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<constraint name="outstanding_shares_security_date_uq" type="uq-constr" table="public.outstanding_shares">
+		<columns names="security,date" ref-type="src-columns"/>
+	</constraint>
+</table>
+
 <constraint name="securities_currency_id_currencies" type="fk-constr" comparison-type="MATCH FULL"
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.currencies" table="public.securities">
 	<columns names="currency" ref-type="src-columns"/>
@@ -2782,6 +2804,12 @@ https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard]]> </comme
 <constraint name="forex_indicators_quote_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.currencies" table="public.forex_indicators">
 	<columns names="quote" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="outstanding_shares_security_fk" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.outstanding_shares">
+	<columns names="security" ref-type="src-columns"/>
 	<columns names="id" ref-type="dst-columns"/>
 </constraint>
 
@@ -3093,6 +3121,15 @@ https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard]]> </comme
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
 		<position x="-166.062" y="-36.753"/>
+	</label>
+</relationship>
+
+<relationship name="rel_outstanding_shares_securities" type="relfk" layers="0"
+	 src-table="public.outstanding_shares"
+	 dst-table="public.securities" reference-fk="outstanding_shares_security_fk"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="-56.5954" y="281.571"/>
 	</label>
 </relationship>
 

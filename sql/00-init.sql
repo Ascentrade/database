@@ -1,5 +1,5 @@
 -- Database generated with pgModeler (PostgreSQL Database Modeler).
--- pgModeler version: 1.0.6
+-- pgModeler version: 1.1.2
 -- PostgreSQL version: 16.0
 -- Project Site: pgmodeler.io
 -- Model Author: ---
@@ -9,8 +9,8 @@
 -- 
 -- object: database | type: DATABASE --
 -- DROP DATABASE IF EXISTS database;
--- CREATE DATABASE database
---	ENCODING = 'UTF8';
+CREATE DATABASE database
+	ENCODING = 'UTF8';
 -- ddl-end --
 
 
@@ -18,6 +18,7 @@
 -- DROP TABLE IF EXISTS public.securities CASCADE;
 CREATE TABLE public.securities (
 	id bigserial NOT NULL,
+	last_update timestamp NOT NULL DEFAULT NOW(),
 	code text NOT NULL,
 	type text NOT NULL,
 	name text NOT NULL,
@@ -52,7 +53,7 @@ CREATE TABLE public.securities (
 	logo_base64 text,
 	ebitda bigint,
 	pe_ratio numeric,
-	peg_ratio smallint,
+	peg_ratio numeric,
 	wallstreet_target_price numeric,
 	book_value numeric,
 	dividend_share numeric,
@@ -2594,6 +2595,18 @@ COMMENT ON TABLE public.forex_indicators IS E'Calculated indicators for forex pa
 ALTER TABLE public.forex_indicators OWNER TO postgres;
 -- ddl-end --
 
+-- object: public.outstanding_shares | type: TABLE --
+-- DROP TABLE IF EXISTS public.outstanding_shares CASCADE;
+CREATE TABLE public.outstanding_shares (
+	security bigint NOT NULL,
+	date date NOT NULL,
+	outstanding_shares bigint NOT NULL,
+	CONSTRAINT outstanding_shares_security_date_uq UNIQUE (security,date)
+);
+-- ddl-end --
+ALTER TABLE public.outstanding_shares OWNER TO postgres;
+-- ddl-end --
+
 -- object: securities_currency_id_currencies | type: CONSTRAINT --
 -- ALTER TABLE public.securities DROP CONSTRAINT IF EXISTS securities_currency_id_currencies CASCADE;
 ALTER TABLE public.securities ADD CONSTRAINT securities_currency_id_currencies FOREIGN KEY (currency)
@@ -2836,6 +2849,13 @@ ON DELETE NO ACTION ON UPDATE NO ACTION;
 -- ALTER TABLE public.forex_indicators DROP CONSTRAINT IF EXISTS forex_indicators_quote_fk CASCADE;
 ALTER TABLE public.forex_indicators ADD CONSTRAINT forex_indicators_quote_fk FOREIGN KEY (quote)
 REFERENCES public.currencies (id) MATCH SIMPLE
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+-- ddl-end --
+
+-- object: outstanding_shares_security_fk | type: CONSTRAINT --
+-- ALTER TABLE public.outstanding_shares DROP CONSTRAINT IF EXISTS outstanding_shares_security_fk CASCADE;
+ALTER TABLE public.outstanding_shares ADD CONSTRAINT outstanding_shares_security_fk FOREIGN KEY (security)
+REFERENCES public.securities (id) MATCH SIMPLE
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 -- ddl-end --
 
