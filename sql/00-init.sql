@@ -9,8 +9,8 @@
 -- 
 -- object: database | type: DATABASE --
 -- DROP DATABASE IF EXISTS database;
-CREATE DATABASE database
-	ENCODING = 'UTF8';
+-- CREATE DATABASE database
+--	 ENCODING = 'UTF8';
 -- ddl-end --
 
 
