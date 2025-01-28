@@ -9,8 +9,8 @@
 -- 
 -- object: database | type: DATABASE --
 -- DROP DATABASE IF EXISTS database;
--- CREATE DATABASE database
---	 ENCODING = 'UTF8';
+CREATE DATABASE database
+	ENCODING = 'UTF8';
 -- ddl-end --
 
 
@@ -723,18 +723,17 @@ INSERT INTO public.exchanges (id, name, code, operating_mic, country, currency, 
 CREATE TABLE public.earnings (
 	security bigint NOT NULL,
 	date date NOT NULL,
-	report_date date NOT NULL,
+	quarterly bool NOT NULL DEFAULT TRUE,
+	fiscal_date date NOT NULL,
 	before_after text DEFAULT '?',
 	eps_actual numeric,
 	eps_estimate numeric,
-	eps_difference numeric,
-	surprise_percent numeric,
-	CONSTRAINT earnings_security_date_uq UNIQUE (security,date)
+	CONSTRAINT earnings_security_date_quarterly_uq UNIQUE (security,date,quarterly)
 );
 -- ddl-end --
-COMMENT ON COLUMN public.earnings.date IS E'Fiscal year quarter date';
+COMMENT ON COLUMN public.earnings.date IS E'Date of earnings report.';
 -- ddl-end --
-COMMENT ON COLUMN public.earnings.report_date IS E'Date of earnings report';
+COMMENT ON COLUMN public.earnings.fiscal_date IS E'Fiscal year quarter date';
 -- ddl-end --
 ALTER TABLE public.earnings OWNER TO postgres;
 -- ddl-end --
@@ -894,21 +893,6 @@ COMMENT ON COLUMN public.forex_pair_quotes.quote IS E'Quote currency\nBASE / QUO
 COMMENT ON COLUMN public.forex_pair_quotes.close IS E'Close price of this day.';
 -- ddl-end --
 ALTER TABLE public.forex_pair_quotes OWNER TO postgres;
--- ddl-end --
-
--- object: public.annual_earnings | type: TABLE --
--- DROP TABLE IF EXISTS public.annual_earnings CASCADE;
-CREATE TABLE public.annual_earnings (
-	security bigint NOT NULL,
-	date date NOT NULL,
-	eps numeric NOT NULL,
-	pe_ratio numeric,
-	CONSTRAINT annual_earnings_security_date_uq UNIQUE (security,date)
-);
--- ddl-end --
-COMMENT ON COLUMN public.annual_earnings.pe_ratio IS E'Price-Earnings-Ratio self calculated.\nAlso available in security_highlights table from EOD.';
--- ddl-end --
-ALTER TABLE public.annual_earnings OWNER TO postgres;
 -- ddl-end --
 
 -- object: public.insider_transactions | type: TABLE --
@@ -1417,16 +1401,6 @@ USING btree
 -- object: quotes_security_date_idx | type: INDEX --
 -- DROP INDEX IF EXISTS public.quotes_security_date_idx CASCADE;
 CREATE INDEX quotes_security_date_idx ON public.quotes
-USING btree
-(
-	security,
-	date
-);
--- ddl-end --
-
--- object: annual_earnings_security_date_idx | type: INDEX --
--- DROP INDEX IF EXISTS public.annual_earnings_security_date_idx CASCADE;
-CREATE INDEX annual_earnings_security_date_idx ON public.annual_earnings
 USING btree
 (
 	security,
@@ -2730,13 +2704,6 @@ ON DELETE NO ACTION ON UPDATE NO ACTION;
 -- ALTER TABLE public.forex_pair_quotes DROP CONSTRAINT IF EXISTS quote_currency_id CASCADE;
 ALTER TABLE public.forex_pair_quotes ADD CONSTRAINT quote_currency_id FOREIGN KEY (quote)
 REFERENCES public.currencies (id) MATCH FULL
-ON DELETE NO ACTION ON UPDATE NO ACTION;
--- ddl-end --
-
--- object: annual_earnings_security_id | type: CONSTRAINT --
--- ALTER TABLE public.annual_earnings DROP CONSTRAINT IF EXISTS annual_earnings_security_id CASCADE;
-ALTER TABLE public.annual_earnings ADD CONSTRAINT annual_earnings_security_id FOREIGN KEY (security)
-REFERENCES public.securities (id) MATCH FULL
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 -- ddl-end --
 

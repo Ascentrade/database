@@ -3,8 +3,8 @@
 CAUTION: Do not modify this file unless you know what you are doing.
  Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="1.1.2" use-changelog="false" max-obj-count="43"
-	 last-position="530,535" last-zoom="0.7" scene-rect="0,0,4269.44,4081.32"
+<dbmodel pgmodeler-ver="1.1.2" use-changelog="false" max-obj-count="42"
+	 last-position="0,0" last-zoom="0.3" scene-rect="0,0,4269.44,4081.32"
 	 default-owner="postgres"
 	 layers="Default"
 	 active-layers="0"
@@ -486,7 +486,7 @@ Used for calculations about correlation etc.]]> </comment>
 	<schema name="public"/>
 	<role name="postgres"/>
 	<comment> <![CDATA[Average from analyst ratings]]> </comment>
-	<position x="3440" y="1100"/>
+	<position x="3400" y="940"/>
 	<column name="security" not-null="true">
 		<type name="bigint" length="0"/>
 	</column>
@@ -673,20 +673,23 @@ Used for TradingView exchange name]]> </comment>
 	</initial-data>
 </table>
 
-<table name="earnings" layers="0" collapse-mode="2" max-obj-count="9" z-value="0">
+<table name="earnings" layers="0" collapse-mode="2" max-obj-count="8" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="2860" y="2320"/>
+	<position x="2620" y="540"/>
 	<column name="security" not-null="true">
 		<type name="bigint" length="0"/>
 	</column>
 	<column name="date" not-null="true">
 		<type name="date" length="0"/>
-		<comment> <![CDATA[Fiscal year quarter date]]> </comment>
+		<comment> <![CDATA[Date of earnings report.]]> </comment>
 	</column>
-	<column name="report_date" not-null="true">
+	<column name="quarterly" not-null="true" default-value="TRUE">
+		<type name="bool" length="0"/>
+	</column>
+	<column name="fiscal_date" not-null="true">
 		<type name="date" length="0"/>
-		<comment> <![CDATA[Date of earnings report]]> </comment>
+		<comment> <![CDATA[Fiscal year quarter date]]> </comment>
 	</column>
 	<column name="before_after" default-value="'?'">
 		<type name="text" length="0"/>
@@ -697,14 +700,8 @@ Used for TradingView exchange name]]> </comment>
 	<column name="eps_estimate">
 		<type name="numeric" length="0"/>
 	</column>
-	<column name="eps_difference">
-		<type name="numeric" length="0"/>
-	</column>
-	<column name="surprise_percent">
-		<type name="numeric" length="0"/>
-	</column>
-	<constraint name="earnings_security_date_uq" type="uq-constr" table="public.earnings">
-		<columns names="security,date" ref-type="src-columns"/>
+	<constraint name="earnings_security_date_quarterly_uq" type="uq-constr" table="public.earnings">
+		<columns names="security,date,quarterly" ref-type="src-columns"/>
 	</constraint>
 </table>
 
@@ -854,7 +851,7 @@ Used for TradingView exchange name]]> </comment>
 <table name="dividends" layers="0" collapse-mode="2" max-obj-count="9" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="3500" y="760"/>
+	<position x="2860" y="2300"/>
 	<column name="security" not-null="true">
 		<type name="bigint" length="0"/>
 	</column>
@@ -970,29 +967,6 @@ BASE / QUOTE]]> </comment>
 	</column>
 	<constraint name="base_quote_date_uq" type="uq-constr" table="public.forex_pair_quotes">
 		<columns names="base,quote,date" ref-type="src-columns"/>
-	</constraint>
-</table>
-
-<table name="annual_earnings" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
-	<schema name="public"/>
-	<role name="postgres"/>
-	<position x="2620" y="640"/>
-	<column name="security" not-null="true">
-		<type name="bigint" length="0"/>
-	</column>
-	<column name="date" not-null="true">
-		<type name="date" length="0"/>
-	</column>
-	<column name="eps" not-null="true">
-		<type name="numeric" length="0"/>
-	</column>
-	<column name="pe_ratio">
-		<type name="numeric" length="0"/>
-		<comment> <![CDATA[Price-Earnings-Ratio self calculated.
-Also available in security_highlights table from EOD.]]> </comment>
-	</column>
-	<constraint name="annual_earnings_security_date_uq" type="uq-constr" table="public.annual_earnings">
-		<columns names="security,date" ref-type="src-columns"/>
 	</constraint>
 </table>
 
@@ -1551,7 +1525,7 @@ yearly = false]]> </comment>
 <table name="officers" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="3380" y="2000"/>
+	<position x="3400" y="1880"/>
 	<column name="security" not-null="true">
 		<type name="bigint" length="0"/>
 	</column>
@@ -1770,7 +1744,7 @@ yearly = false]]> </comment>
 	<schema name="public"/>
 	<role name="postgres"/>
 	<comment> <![CDATA[Just keep data of the last trading day]]> </comment>
-	<position x="3440" y="1440"/>
+	<position x="3400" y="1300"/>
 	<column name="security" not-null="true">
 		<type name="bigint" length="0"/>
 	</column>
@@ -1851,7 +1825,7 @@ yearly = false]]> </comment>
 <table name="option_expirations_last" layers="0" collapse-mode="2" max-obj-count="10" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="3380" y="2240"/>
+	<position x="3400" y="2120"/>
 	<column name="security" not-null="true">
 		<type name="bigint" length="0"/>
 	</column>
@@ -1897,17 +1871,6 @@ yearly = false]]> </comment>
 </index>
 
 <index name="quotes_security_date_idx" table="public.quotes"
-	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
-	 index-type="btree" factor="0">
-		<idxelement use-sorting="false">
-			<column name="security"/>
-		</idxelement>
-		<idxelement use-sorting="false">
-			<column name="date"/>
-		</idxelement>
-</index>
-
-<index name="annual_earnings_security_date_idx" table="public.annual_earnings"
 	 concurrent="false" unique="false" fast-update="false" buffering="false" nulls-not-distinct="false"
 	 index-type="btree" factor="0">
 		<idxelement use-sorting="false">
@@ -2705,12 +2668,6 @@ https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard]]> </comme
 	<columns names="id" ref-type="dst-columns"/>
 </constraint>
 
-<constraint name="annual_earnings_security_id" type="fk-constr" comparison-type="MATCH FULL"
-	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.annual_earnings">
-	<columns names="security" ref-type="src-columns"/>
-	<columns names="id" ref-type="dst-columns"/>
-</constraint>
-
 <constraint name="insider_transactions_security_id" type="fk-constr" comparison-type="MATCH FULL"
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.securities" table="public.insider_transactions">
 	<columns names="security" ref-type="src-columns"/>
@@ -2863,7 +2820,7 @@ https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard]]> </comme
 	 dst-table="public.securities" reference-fk="analyst_ratings_security_id_securities"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
-		<position x="292.068" y="-186.307"/>
+		<position x="275.568" y="-247.215"/>
 	</label>
 </relationship>
 
@@ -2881,7 +2838,7 @@ https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard]]> </comme
 	 dst-table="public.securities" reference-fk="earnings_security_id"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
-		<position x="90.5659" y="138.283"/>
+		<position x="32.2521" y="-282.209"/>
 	</label>
 </relationship>
 
@@ -2917,7 +2874,7 @@ https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard]]> </comme
 	 dst-table="public.securities" reference-fk="dividends_security_id"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
-		<position x="324.068" y="-320.84"/>
+		<position x="99.2136" y="130.85"/>
 	</label>
 </relationship>
 
@@ -2954,15 +2911,6 @@ https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard]]> </comme
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
 		<position x="256.36" y="123.247"/>
-	</label>
-</relationship>
-
-<relationship name="rel_annual_earnings_securities" type="relfk" layers="0"
-	 src-table="public.annual_earnings"
-	 dst-table="public.securities" reference-fk="annual_earnings_security_id"
-	 src-required="false" dst-required="true">
-	<label ref-type="name-label">
-		<position x="37.1043" y="-248.422"/>
 	</label>
 </relationship>
 
@@ -3034,7 +2982,7 @@ https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard]]> </comme
 	 dst-table="public.securities" reference-fk="officers_security_id"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
-		<position x="236.568" y="45.5712"/>
+		<position x="270.068" y="22.3298"/>
 	</label>
 </relationship>
 
@@ -3052,7 +3000,7 @@ https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard]]> </comme
 	 dst-table="public.securities" reference-fk="option_contracts_last_security_id"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
-		<position x="271.568" y="-34.6845"/>
+		<position x="235.068" y="-91.8424"/>
 	</label>
 </relationship>
 
@@ -3061,7 +3009,7 @@ https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard]]> </comme
 	 dst-table="public.securities" reference-fk="options_expirations_last_security_fk"
 	 src-required="false" dst-required="true">
 	<label ref-type="name-label">
-		<position x="267.568" y="129.11"/>
+		<position x="241.068" y="79.6159"/>
 	</label>
 </relationship>
 

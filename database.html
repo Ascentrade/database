@@ -235,7 +235,6 @@ max-width: 500px;
  <ul>
  <li><a href="#public.addresses">public.addresses</a></li>
  <li><a href="#public.analyst_ratings">public.analyst_ratings</a></li>
- <li><a href="#public.annual_earnings">public.annual_earnings</a></li>
  <li><a href="#public.balance_sheets">public.balance_sheets</a></li>
  <li><a href="#public.cash_flows">public.cash_flows</a></li>
  <li><a href="#public.countries">public.countries</a></li>
@@ -257,6 +256,7 @@ max-width: 500px;
  <li><a href="#public.option_contracts_last">public.option_contracts_last</a></li>
  <li><a href="#public.option_expirations">public.option_expirations</a></li>
  <li><a href="#public.option_expirations_last">public.option_expirations_last</a></li>
+ <li><a href="#public.outstanding_shares">public.outstanding_shares</a></li>
  <li><a href="#public.quotes">public.quotes</a></li>
  <li><a href="#public.securities">public.securities</a></li>
  <li><a href="#public.splits">public.splits</a></li>
@@ -548,129 +548,6 @@ max-width: 500px;
  <td>analyst_ratings_security_rating_idx</td>
  <td class="value constr-type">btree</td>
  <td>security, rating</td>
- <td class="value"><p class="max-td-wth"></p></td>
- <td class="value"><p class="max-td-wth"></p></td>
- <td><p class="max-td-wth"><em></em></p></td></td>
- </tr>
- </table>
- </td>
- </tr>
- </tbody>
-</table>
-
-<div>
- <a href="#index" class="nav-link">&uarr; Index</a>
-</div>
-<table id="public.annual_earnings" class="table">
- <caption class="tab-name">
- <em>public</em>.<strong>annual_earnings</strong>
- <span class="type-label">Table</span>
- </caption>
- <thead>
- <tr>
- <th>Name</th>
- <th>Data type</th>
- <th>PK</th>
- <th>FK</th>
- <th>UQ</th>
- <th>Not null</th>
- <th>Default value</th>
- <th>Description</th>
- </tr>
- </thead>
- <tbody>
- <tr>
- <td>security</td>
- <td class="data-type">bigint</td>
- <td class="bool-field"></td>
- <td class="bool-field">&#10003;</td>
- <td class="bool-field">&#10003;</td>
- <td class="bool-field">&#10003;</td>
- <td class="value"></td>
- <td><p class="max-td-wth"><em></em></p></td>
- </tr>
- <tr>
- <td>date</td>
- <td class="data-type">date</td>
- <td class="bool-field"></td>
- <td class="bool-field"></td>
- <td class="bool-field">&#10003;</td>
- <td class="bool-field">&#10003;</td>
- <td class="value"></td>
- <td><p class="max-td-wth"><em></em></p></td>
- </tr>
- <tr>
- <td>eps</td>
- <td class="data-type">numeric</td>
- <td class="bool-field"></td>
- <td class="bool-field"></td>
- <td class="bool-field"></td>
- <td class="bool-field">&#10003;</td>
- <td class="value"></td>
- <td><p class="max-td-wth"><em></em></p></td>
- </tr>
- <tr>
- <td>pe_ratio</td>
- <td class="data-type">numeric</td>
- <td class="bool-field"></td>
- <td class="bool-field"></td>
- <td class="bool-field"></td>
- <td class="bool-field"></td>
- <td class="value"></td>
- <td><p class="max-td-wth"><em>Price-Earnings-Ratio self calculated.
-Also available in security_highlights table from EOD.</em></p></td>
- </tr>
- <tr>
- <td colspan="8" class="nested-tab-parent">
- <table class="nested-tab">
- <tr>
- <td class="title" colspan="6">Constraints</td>
- </tr>
- <tr>
- <td class="title">Name</td>
- <td class="title">Type</td>
- <td class="title">Column(s)</td>
- <td class="title">References</td>
- <td class="title">Expression</td>
- <td class="title">Description</td>
- </tr>
- <tr>
- <td>annual_earnings_security_date_uq</td>
- <td class="value constr-type">UNIQUE</td>
- <td>security, date</td>
- <td></td>
- <td class="value"></td>
- <td colspan="3"><p class="max-td-wth"><em></em></p></td>
- </tr>
- <tr>
- <td>annual_earnings_security_id</td>
- <td class="value constr-type">FOREIGN KEY</td>
- <td>security</td>
- <td><a href="#public.securities">public.securities</a></td>
- <td class="value"></td>
- <td colspan="3"><p class="max-td-wth"><em></em></p></td>
- </tr>
- </table>
- </td>
- </tr>
- <tr>
- <td colspan="8" class="nested-tab-parent">
- <table class="nested-tab">
- <tr>
- <td class="title" colspan="6">Indexes</td>
- </tr>
- <tr>
- <td class="title">Name</td>
- <td class="title">Type</td>
- <td class="title">Column(s)</td>
- <td class="title">Expression(s)</td>
- <td class="title">Predicate</td>
- <td class="title">Description</td>
- </tr>
- <tr>
- <td>annual_earnings_security_date_idx</td>
- <td class="value constr-type">btree</td>
- <td>security, date</td>
  <td class="value"><p class="max-td-wth"></p></td>
  <td class="value"><p class="max-td-wth"></p></td>
  <td><p class="max-td-wth"><em></em></p></td></td>
@@ -2225,17 +2102,27 @@ yearly = false</em></p></td>
  <td class="bool-field">&#10003;</td>
  <td class="bool-field">&#10003;</td>
  <td class="value"></td>
- <td><p class="max-td-wth"><em>Fiscal year quarter date</em></p></td>
+ <td><p class="max-td-wth"><em>Date of earnings report.</em></p></td>
  </tr>
  <tr>
- <td>report_date</td>
+ <td>quarterly</td>
+ <td class="data-type">bool</td>
+ <td class="bool-field"></td>
+ <td class="bool-field"></td>
+ <td class="bool-field">&#10003;</td>
+ <td class="bool-field">&#10003;</td>
+ <td class="value">TRUE</td>
+ <td><p class="max-td-wth"><em></em></p></td>
+ </tr>
+ <tr>
+ <td>fiscal_date</td>
  <td class="data-type">date</td>
  <td class="bool-field"></td>
  <td class="bool-field"></td>
  <td class="bool-field"></td>
  <td class="bool-field">&#10003;</td>
  <td class="value"></td>
- <td><p class="max-td-wth"><em>Date of earnings report</em></p></td>
+ <td><p class="max-td-wth"><em>Fiscal year quarter date</em></p></td>
  </tr>
  <tr>
  <td>before_after</td>
@@ -2268,26 +2155,6 @@ yearly = false</em></p></td>
  <td><p class="max-td-wth"><em></em></p></td>
  </tr>
  <tr>
- <td>eps_difference</td>
- <td class="data-type">numeric</td>
- <td class="bool-field"></td>
- <td class="bool-field"></td>
- <td class="bool-field"></td>
- <td class="bool-field"></td>
- <td class="value"></td>
- <td><p class="max-td-wth"><em></em></p></td>
- </tr>
- <tr>
- <td>surprise_percent</td>
- <td class="data-type">numeric</td>
- <td class="bool-field"></td>
- <td class="bool-field"></td>
- <td class="bool-field"></td>
- <td class="bool-field"></td>
- <td class="value"></td>
- <td><p class="max-td-wth"><em></em></p></td>
- </tr>
- <tr>
  <td colspan="8" class="nested-tab-parent">
  <table class="nested-tab">
  <tr>
@@ -2302,9 +2169,9 @@ yearly = false</em></p></td>
  <td class="title">Description</td>
  </tr>
  <tr>
- <td>earnings_security_date_uq</td>
+ <td>earnings_security_date_quarterly_uq</td>
  <td class="value constr-type">UNIQUE</td>
- <td>security, date</td>
+ <td>security, date, quarterly</td>
  <td></td>
  <td class="value"></td>
  <td colspan="3"><p class="max-td-wth"><em></em></p></td>
@@ -5129,6 +4996,93 @@ Mostly a XML file to download.</em></p></td>
 <div>
  <a href="#index" class="nav-link">&uarr; Index</a>
 </div>
+<table id="public.outstanding_shares" class="table">
+ <caption class="tab-name">
+ <em>public</em>.<strong>outstanding_shares</strong>
+ <span class="type-label">Table</span>
+ </caption>
+ <thead>
+ <tr>
+ <th>Name</th>
+ <th>Data type</th>
+ <th>PK</th>
+ <th>FK</th>
+ <th>UQ</th>
+ <th>Not null</th>
+ <th>Default value</th>
+ <th>Description</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>security</td>
+ <td class="data-type">bigint</td>
+ <td class="bool-field"></td>
+ <td class="bool-field">&#10003;</td>
+ <td class="bool-field">&#10003;</td>
+ <td class="bool-field">&#10003;</td>
+ <td class="value"></td>
+ <td><p class="max-td-wth"><em></em></p></td>
+ </tr>
+ <tr>
+ <td>date</td>
+ <td class="data-type">date</td>
+ <td class="bool-field"></td>
+ <td class="bool-field"></td>
+ <td class="bool-field">&#10003;</td>
+ <td class="bool-field">&#10003;</td>
+ <td class="value"></td>
+ <td><p class="max-td-wth"><em></em></p></td>
+ </tr>
+ <tr>
+ <td>outstanding_shares</td>
+ <td class="data-type">bigint</td>
+ <td class="bool-field"></td>
+ <td class="bool-field"></td>
+ <td class="bool-field"></td>
+ <td class="bool-field">&#10003;</td>
+ <td class="value"></td>
+ <td><p class="max-td-wth"><em></em></p></td>
+ </tr>
+ <tr>
+ <td colspan="8" class="nested-tab-parent">
+ <table class="nested-tab">
+ <tr>
+ <td class="title" colspan="6">Constraints</td>
+ </tr>
+ <tr>
+ <td class="title">Name</td>
+ <td class="title">Type</td>
+ <td class="title">Column(s)</td>
+ <td class="title">References</td>
+ <td class="title">Expression</td>
+ <td class="title">Description</td>
+ </tr>
+ <tr>
+ <td>outstanding_shares_security_date_uq</td>
+ <td class="value constr-type">UNIQUE</td>
+ <td>security, date</td>
+ <td></td>
+ <td class="value"></td>
+ <td colspan="3"><p class="max-td-wth"><em></em></p></td>
+ </tr>
+ <tr>
+ <td>outstanding_shares_security_fk</td>
+ <td class="value constr-type">FOREIGN KEY</td>
+ <td>security</td>
+ <td><a href="#public.securities">public.securities</a></td>
+ <td class="value"></td>
+ <td colspan="3"><p class="max-td-wth"><em></em></p></td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ </tbody>
+</table>
+
+<div>
+ <a href="#index" class="nav-link">&uarr; Index</a>
+</div>
 <table id="public.quotes" class="table">
  <caption class="tab-name">
  <em>public</em>.<strong>quotes</strong>
@@ -5358,6 +5312,16 @@ Used for calculations about correlation etc.</em></p></td>
  <td class="bool-field"></td>
  <td class="bool-field">&#10003;</td>
  <td class="value"></td>
+ <td><p class="max-td-wth"><em></em></p></td>
+ </tr>
+ <tr>
+ <td>last_update</td>
+ <td class="data-type">timestamp</td>
+ <td class="bool-field"></td>
+ <td class="bool-field"></td>
+ <td class="bool-field"></td>
+ <td class="bool-field">&#10003;</td>
+ <td class="value">NOW()</td>
  <td><p class="max-td-wth"><em></em></p></td>
  </tr>
  <tr>
@@ -5623,7 +5587,7 @@ https://interactivebrokers.github.io/tws-api/basic_contracts.html</em></p></td>
  <td class="bool-field"></td>
  <td class="bool-field"></td>
  <td class="bool-field"></td>
- <td class="bool-field">&#10003;</td>
+ <td class="bool-field"></td>
  <td class="value">false</td>
  <td><p class="max-td-wth"><em></em></p></td>
  </tr>
@@ -5709,7 +5673,7 @@ https://interactivebrokers.github.io/tws-api/basic_contracts.html</em></p></td>
  </tr>
  <tr>
  <td>peg_ratio</td>
- <td class="data-type">smallint</td>
+ <td class="data-type">numeric</td>
  <td class="bool-field"></td>
  <td class="bool-field"></td>
  <td class="bool-field"></td>
@@ -6373,8 +6337,8 @@ new = 3
  <a href="#index" class="nav-link">&uarr; Index</a>
 </div>
 <footer>
-Generated at <em>2024-04-03T13:42:13 </em> by <strong>pgModeler 1.0.6</strong><br/>
+Generated at <em>2025-01-28T06:32:15 </em> by <strong>pgModeler 1.1.2</strong><br/>
 <a href="https://pgmodeler.io">PostgreSQL Database Modeler - https://pgmodeler.io</a><br/>
-Copyright © 2006 - 2024 Raphael Araújo e Silva
+Copyright © 2006 - 2025 Raphael Araújo e Silva
 </footer> </body>
 </html>
